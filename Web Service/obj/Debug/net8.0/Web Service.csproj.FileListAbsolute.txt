@@ -1,0 +1,43 @@
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\Web Service.csproj.AssemblyReference.cache
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\Web Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\Web Service.AssemblyInfoInputs.cache
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\Web Service.AssemblyInfo.cs
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\Web Service.csproj.CoreCompileInputs.cache
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\Web Service.MvcApplicationPartsAssemblyInfo.cs
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\Web Service.MvcApplicationPartsAssemblyInfo.cache
+C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\appsettings.Development.json
+C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\appsettings.json
+C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\Web Service.staticwebassets.runtime.json
+C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\Web Service.staticwebassets.endpoints.json
+C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\Web Service.exe
+C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\Web Service.deps.json
+C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\Web Service.runtimeconfig.json
+C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\Web Service.dll
+C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\Web Service.pdb
+C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\System.Data.OleDb.dll
+C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\System.Diagnostics.EventLog.dll
+C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\System.Diagnostics.PerformanceCounter.dll
+C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Data.OleDb.dll
+C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.Messages.dll
+C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.PerformanceCounter.dll
+C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\Data.dll
+C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\Data.pdb
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\scopedcss\bundle\Web Service.styles.css
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\staticwebassets.build.json
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\staticwebassets.development.json
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\Web Serv.2503F131.Up2Date
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\Web Service.dll
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\refint\Web Service.dll
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\Web Service.pdb
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\Web Service.genruntimeconfig.cache
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\ref\Web Service.dll

@@ -1,0 +1,14 @@
+C:\Trivia_Game\WhatsAppClone\SandBox\bin\Debug\net8.0\SandBox.exe
+C:\Trivia_Game\WhatsAppClone\SandBox\bin\Debug\net8.0\SandBox.deps.json
+C:\Trivia_Game\WhatsAppClone\SandBox\bin\Debug\net8.0\SandBox.runtimeconfig.json
+C:\Trivia_Game\WhatsAppClone\SandBox\bin\Debug\net8.0\SandBox.dll
+C:\Trivia_Game\WhatsAppClone\SandBox\bin\Debug\net8.0\SandBox.pdb
+C:\Trivia_Game\WhatsAppClone\SandBox\obj\Debug\net8.0\SandBox.GeneratedMSBuildEditorConfig.editorconfig
+C:\Trivia_Game\WhatsAppClone\SandBox\obj\Debug\net8.0\SandBox.AssemblyInfoInputs.cache
+C:\Trivia_Game\WhatsAppClone\SandBox\obj\Debug\net8.0\SandBox.AssemblyInfo.cs
+C:\Trivia_Game\WhatsAppClone\SandBox\obj\Debug\net8.0\SandBox.csproj.CoreCompileInputs.cache
+C:\Trivia_Game\WhatsAppClone\SandBox\obj\Debug\net8.0\SandBox.dll
+C:\Trivia_Game\WhatsAppClone\SandBox\obj\Debug\net8.0\refint\SandBox.dll
+C:\Trivia_Game\WhatsAppClone\SandBox\obj\Debug\net8.0\SandBox.pdb
+C:\Trivia_Game\WhatsAppClone\SandBox\obj\Debug\net8.0\SandBox.genruntimeconfig.cache
+C:\Trivia_Game\WhatsAppClone\SandBox\obj\Debug\net8.0\ref\SandBox.dll
