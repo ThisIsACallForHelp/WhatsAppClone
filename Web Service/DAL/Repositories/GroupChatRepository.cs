@@ -100,8 +100,9 @@ namespace Web_Service
 
         public List<GroupChat> GetArchived(string ID)
         {
-            string sql = $@"SELECT GroupChat.ChatID, GroupChat.Users, GroupChat.GroupChatName, GroupChat.GroupChatID FROM GroupChat LEFT JOIN Archive
-                                   ON GroupChat.ChatID = Archive.ChatID WHERE GroupChat.Users LIKE %@UserID%";
+            string sql = $@"SELECT GroupChat.* FROM GroupChat 
+                            LEFT JOIN Archive ON GroupChat.ChatID = Archive.ChatID
+                            WHERE Archive.UserID = {ID}";
             base.dbContext.AddParameters("@UserID", ID);
             List<GroupChat> Chats = new List<GroupChat>();
             using (IDataReader reader = base.dbContext.Read(sql))

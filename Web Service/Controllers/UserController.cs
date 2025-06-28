@@ -1,6 +1,7 @@
 ﻿using Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace Web_Service
 {
@@ -18,7 +19,8 @@ namespace Web_Service
         }
 
         [HttpGet("Main")]
-        public MainPage GetMainPage(string userID = "Nmx", string ChatID = "FR", bool IsGroup = false)
+        //works
+        public MainPage GetMainPage(string userID , string ChatID, bool IsGroup = false)
         {
             List<Message> Convo = new List<Message>();
             List<Message> LastMessages = new List<Message>();
@@ -62,7 +64,7 @@ namespace Web_Service
                 this.dbContext.CloseConnection();   
             }
         }
-
+        //check that 
         [HttpGet("Search")]
         public Search SearchBarResult(string Request,string UserID)
         {
@@ -98,7 +100,9 @@ namespace Web_Service
                 this.dbContext.CloseConnection();
             }
         }
+
         [HttpGet("Profile_Info")]
+        //no way this wont work
         public User GetDetails(string ID)
         {
             try
@@ -117,6 +121,7 @@ namespace Web_Service
             }
         }
         [HttpPost("Register")]
+        //should work 
         public int Register(User user)
         {
             try
@@ -135,17 +140,81 @@ namespace Web_Service
             }
         }
 
-        //[HttpGet]
-        //public MainPage GetArchivedChats(string ID)
-        //{
-        //    List<Chat> chatList = new List<Chat>();
-        //    List<GroupChat> groupChatList = new List<GroupChat>();
-        //    List<Message> messageList = new List<Message>();
-        //    try
-        //    {
-        //        this.dbContext.OpenConnection();
-        //        chatList = this.UOW.ChatRepository.GetArchived(ID);
-        //    }
-        //}
+        [HttpGet]
+        //check that
+        public MainPage GetArchivedChats(string UserID)
+        {
+            List<Chat> chatList = new List<Chat>();
+            List<GroupChat> groupChatList = new List<GroupChat>();
+            List<Message> messageList = new List<Message>();
+            try
+            {
+                this.dbContext.OpenConnection();
+                chatList = this.UOW.ChatRepository.GetArchived(UserID);
+                groupChatList = this.UOW.GroupChatRepository.GetArchived(UserID);               
+                foreach (Chat chat in chatList)
+                {
+                    messageList.Add(this.UOW.MessageRepository.GetLastMessages(UserID, chat.ID));
+                }
+                foreach(GroupChat chat in groupChatList)
+                {
+                    messageList.Add(this.UOW.MessageRepository.GetLastGroupMessages(UserID, chat.ID));
+                }
+                return new MainPage()
+                { 
+                    Chats = chatList,
+                    GroupChats = groupChatList,
+                    Messages = messageList
+                };
+                //but what about Convo?
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+            finally 
+            {
+                this.dbContext.CloseConnection(); 
+            }
+        }
+
+        [HttpPost]
+        //should work, check that 
+        public bool ArchiveChat(Chat chat, string UserID)
+        {
+            try
+            {
+                this.dbContext.OpenConnection();
+                return this.UOW.ArchiveRepository.Create(new Archive(){ ChatID = chat.ID, UserID = UserID });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+            finally 
+            { 
+                this.dbContext.CloseConnection(); 
+            }
+        }
+        [HttpPost]
+        public bool DeleteChat(Chat chat)
+        {
+            try
+            {
+                this.dbContext.OpenConnection();
+                return this.UOW.ChatRepository.DeleteByID(chat.ID);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+            finally
+            {
+                this.dbContext.CloseConnection();
+            }
+        }
     }
 }

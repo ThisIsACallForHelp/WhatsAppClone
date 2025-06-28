@@ -106,13 +106,12 @@ namespace Web_Service
             return Chats;
         }
 
-        public List<Chat> GetArchived(string ID)
+        public List<Chat> GetArchived(string UserID)
         {
-            string sql = $@"SELECT Chat.ChatID, Chat.ChatName, Chat.Creator,
-                                   Chat.CreationDate, Chat.ChatIMG, Chat.ChatDescription,
-                                   Chat.FirstUserID, Chat.SecondUserID FROM Chat LEFT JOIN Archive
-                                   ON Chat.ChatID = Archive.ChatID WHERE Chat.UserID = Archive.UserID";
-            base.dbContext.AddParameters("@UserID", ID);
+            string sql = $@"SELECT Chat.* FROM Chat 
+                            LEFT JOIN Archive ON Chat.ChatID = Archive.ChatID
+                            WHERE Archive.UserID = {UserID}";
+            base.dbContext.AddParameters("@UserID", UserID);
             List<Chat> Chats = new List<Chat>();
             using (IDataReader reader = base.dbContext.Read(sql))
             {
