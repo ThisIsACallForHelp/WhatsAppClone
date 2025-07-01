@@ -1,11 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "8inq3eTmJuA=",
+  "dgSpecHash": "rza69rwCR8s=",
   "success": true,
   "projectFilePath": "C:\\Trivia_Game\\WhatsAppClone\\Web Service\\Web Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.win32.systemevents\\9.0.6\\microsoft.win32.systemevents.9.0.6.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\qrcoder\\1.6.0\\qrcoder.1.6.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\swashbuckle.aspnetcore\\6.6.2\\swashbuckle.aspnetcore.6.6.2.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.6.2\\swashbuckle.aspnetcore.swagger.6.6.2.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.6.2\\swashbuckle.aspnetcore.swaggergen.6.6.2.nupkg.sha512",
@@ -14,7 +18,12 @@
     "C:\\Users\\USER\\.nuget\\packages\\system.data.oledb\\9.0.6\\system.data.oledb.9.0.6.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\system.diagnostics.eventlog\\9.0.6\\system.diagnostics.eventlog.9.0.6.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\system.diagnostics.performancecounter\\9.0.6\\system.diagnostics.performancecounter.9.0.6.nupkg.sha512",
-    "C:\\Users\\USER\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.6\\system.security.cryptography.protecteddata.9.0.6.nupkg.sha512"
+    "C:\\Users\\USER\\.nuget\\packages\\system.drawing.common\\9.0.6\\system.drawing.common.9.0.6.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.6\\system.security.cryptography.protecteddata.9.0.6.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -12,3 +12,4 @@ C:\Trivia_Game\WhatsAppClone\SandBox\obj\Debug\net8.0\refint\SandBox.dll
 C:\Trivia_Game\WhatsAppClone\SandBox\obj\Debug\net8.0\SandBox.pdb
 C:\Trivia_Game\WhatsAppClone\SandBox\obj\Debug\net8.0\SandBox.genruntimeconfig.cache
 C:\Trivia_Game\WhatsAppClone\SandBox\obj\Debug\net8.0\ref\SandBox.dll
+C:\Trivia_Game\WhatsAppClone\SandBox\obj\Debug\net8.0\SandBox.sourcelink.json

@@ -121,6 +121,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "QRCoder": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.6.2, )"
@@ -128,6 +132,14 @@
             "System.Data.OleDb": {
               "target": "Package",
               "version": "[9.0.6, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "System.IO": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [

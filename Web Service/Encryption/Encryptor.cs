@@ -3,7 +3,7 @@ using System.Security.Cryptography;
 using System.Text;
 namespace Web_Service
 {
-    public class Encryptor : IEncryptor
+    public class Encryptor 
     {
         public byte[] GetSalt()
         {

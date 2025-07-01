@@ -1,0 +1,10 @@
+﻿Create a folder for each one of the users to store their keys \
+string basePath = @"C:\YourApp\Keys";
+string userId = "Alice";
+string userFolderPath = Path.Combine(basePath, userId);
+
+// Create the folder if it doesn't exist
+Directory.CreateDirectory(userFolderPath);
+
+// Now you can safely save files inside userFolderPath
+string ecdhKeyPath = Path.Combine(userFolderPath, "ecdh.key");

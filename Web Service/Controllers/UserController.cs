@@ -216,5 +216,11 @@ namespace Web_Service
                 this.dbContext.CloseConnection();
             }
         }
+
+        [HttpGet]
+        public byte[] GetQR()
+        {
+            return QRCode_Creator.Create("Hello");
+        }
     }
 }

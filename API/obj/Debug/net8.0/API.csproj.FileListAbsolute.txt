@@ -1,0 +1,13 @@
+C:\Trivia_Game\WhatsAppClone\API\bin\Debug\net8.0\API.deps.json
+C:\Trivia_Game\WhatsAppClone\API\bin\Debug\net8.0\API.dll
+C:\Trivia_Game\WhatsAppClone\API\bin\Debug\net8.0\API.pdb
+C:\Trivia_Game\WhatsAppClone\API\obj\Debug\net8.0\API.csproj.AssemblyReference.cache
+C:\Trivia_Game\WhatsAppClone\API\obj\Debug\net8.0\API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Trivia_Game\WhatsAppClone\API\obj\Debug\net8.0\API.AssemblyInfoInputs.cache
+C:\Trivia_Game\WhatsAppClone\API\obj\Debug\net8.0\API.AssemblyInfo.cs
+C:\Trivia_Game\WhatsAppClone\API\obj\Debug\net8.0\API.csproj.CoreCompileInputs.cache
+C:\Trivia_Game\WhatsAppClone\API\obj\Debug\net8.0\API.sourcelink.json
+C:\Trivia_Game\WhatsAppClone\API\obj\Debug\net8.0\API.dll
+C:\Trivia_Game\WhatsAppClone\API\obj\Debug\net8.0\refint\API.dll
+C:\Trivia_Game\WhatsAppClone\API\obj\Debug\net8.0\API.pdb
+C:\Trivia_Game\WhatsAppClone\API\obj\Debug\net8.0\ref\API.dll

@@ -1,6 +1,89 @@
 [
   {
     "ContainingType": "Web_Service.UserController",
+    "Method": "ArchiveChat",
+    "RelativePath": "api/User/ArchiveChat",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "chat",
+        "Type": "Data.Chat",
+        "IsRequired": true
+      },
+      {
+        "Name": "UserID",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Web_Service.UserController",
+    "Method": "DeleteChat",
+    "RelativePath": "api/User/DeleteChat",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "chat",
+        "Type": "Data.Chat",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Web_Service.UserController",
+    "Method": "GetArchivedChats",
+    "RelativePath": "api/User/GetArchivedChats",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserID",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Data.MainPage",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Web_Service.UserController",
     "Method": "GetDetails",
     "RelativePath": "api/User/GetDetails/Profile_Info",
     "HttpMethod": "GET",
@@ -52,6 +135,26 @@
     "ReturnTypes": [
       {
         "Type": "Data.MainPage",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Web_Service.UserController",
+    "Method": "GetQR",
+    "RelativePath": "api/User/GetQR",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Byte[]",
         "MediaTypes": [
           "text/plain",
           "application/json",
