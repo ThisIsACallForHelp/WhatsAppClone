@@ -74,12 +74,11 @@ namespace Web_Service
 
         public List<Chat> GetBySearch(string ChatName, string UserID)
         {
-            string sql = $@"SELECT * FROM Chat WHERE ChatName LIKE '{ChatName}' AND 
-                                                              (FirstUserID = '{UserID}' OR    
-                                                              SecondUserID = '{UserID}')";
-            //base.dbContext.AddParameters("@ChatName", ChatName);
-            //base.dbContext.AddParameters("@UserID", UserID);
-            //base.dbContext.AddParameters("@SecondID", UserID);
+            string sql = $@"SELECT * FROM Chat 
+                                               WHERE Chat.ChatName LIKE @ChatName 
+                                               AND (Chat.FirstUserID = @UserID OR Chat.SecondUserID != @UserID)";
+            base.dbContext.AddParameters("@ChatName", '%' + ChatName + '%');
+            base.dbContext.AddParameters("@UserID", UserID);
             Console.WriteLine(sql);
             List<Chat> Chats = new List<Chat>();
             using (IDataReader reader = base.dbContext.Read(sql))

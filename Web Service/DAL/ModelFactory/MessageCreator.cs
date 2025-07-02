@@ -15,7 +15,14 @@ namespace Web_Service
                 SentAt = Convert.ToDateTime(src["SentAt"]),
                 ID = Convert.ToString(src["MessageID"]),
                 Content = Convert.ToString(src["Content"]),
-                Attachments = Convert.ToString(src["Attachments"])
+                Attachments = Convert.ToString(src["Attachments"]),
+                SenderPublicKeyBase64 = Convert.ToString(src["SenderPublicKeyBase64"]),
+                SenderSigningKeyBase64 = Convert.ToString(src["SenderSigningKeyBase64"]),
+                CipherTextBase64 = Convert.ToString(src["CipherTextBase64"]),
+                HmacBase64 = Convert.ToString(src["HmacBase64"]),
+                IVBase64 = Convert.ToString(src["IVBase64"]),
+                SignatureBase64 = Convert.ToString(src["SignatureBase64"]),
+                ChatID = Convert.ToString(src["ChatID"])
             };
         }
     }

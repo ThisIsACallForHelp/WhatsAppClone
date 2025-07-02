@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Security.Cryptography;
+using System.Security.Cryptography.Xml;
 
 namespace Web_Service
 {
@@ -221,6 +223,31 @@ namespace Web_Service
         public byte[] GetQR()
         {
             return QRCode_Creator.Create("Hello");
+        }
+        [HttpPost]
+        public bool SendMessage(Message message)
+        {
+            try
+            {
+                this.dbContext.OpenConnection();
+                byte[] CipherText = Convert.FromBase64String(message.CipherTextBase64);
+                byte[] SenderSigningKey = Convert.FromBase64String(message.SenderSigningKeyBase64);
+                byte[] Signature = Convert.FromBase64String(message.SignatureBase64);
+                if (!DHEncryption.VerifySignature(CipherText, Signature, SenderSigningKey))
+                {
+                    throw new CryptographicException("Signature Verification Failed");
+                }
+                return this.UOW.MessageRepository.Create(message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+            finally
+            {
+                this.dbContext.CloseConnection();
+            }
         }
     }
 }
