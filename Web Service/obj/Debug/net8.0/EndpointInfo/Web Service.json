@@ -340,26 +340,63 @@
         "tags": [
           "User"
         ],
+        "parameters": [
+          {
+            "name": "data",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/SendMessage": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Message"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Message"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Message"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "string",
-                  "format": "byte"
+                  "type": "boolean"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "format": "byte"
+                  "type": "boolean"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "string",
-                  "format": "byte"
+                  "type": "boolean"
                 }
               }
             }
@@ -475,6 +512,38 @@
             "type": "string",
             "nullable": true
           },
+          "cipherTextBase64": {
+            "type": "string",
+            "nullable": true
+          },
+          "ivBase64": {
+            "type": "string",
+            "nullable": true
+          },
+          "hmacBase64": {
+            "type": "string",
+            "nullable": true
+          },
+          "signatureBase64": {
+            "type": "string",
+            "nullable": true
+          },
+          "senderPublicKeyBase64": {
+            "type": "string",
+            "nullable": true
+          },
+          "senderSigningKeyBase64": {
+            "type": "string",
+            "nullable": true
+          },
+          "chatID": {
+            "type": "string",
+            "nullable": true
+          },
+          "attachments": {
+            "type": "string",
+            "nullable": true
+          },
           "senderID": {
             "type": "string",
             "nullable": true
@@ -485,10 +554,6 @@
             "nullable": true
           },
           "content": {
-            "type": "string",
-            "nullable": true
-          },
-          "attachments": {
             "type": "string",
             "nullable": true
           }

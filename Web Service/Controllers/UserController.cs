@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Drawing;
 using System.Security.Cryptography;
 using System.Security.Cryptography.Xml;
 
@@ -220,10 +221,13 @@ namespace Web_Service
         }
 
         [HttpGet]
-        public byte[] GetQR()
+        public IActionResult GetQR(string data)
         {
-            return QRCode_Creator.Create("Hello");
+            byte[] qrBytes = QRCode_Creator.Create(data);
+            return File(qrBytes, "image/png");
         }
+
+
         [HttpPost]
         public bool SendMessage(Message message)
         {

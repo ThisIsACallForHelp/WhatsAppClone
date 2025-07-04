@@ -4,7 +4,7 @@ namespace Web_Service
 {
     public class DHEncryption
     {
-        public ECDiffieHellmanCng Dh { get; private set; }
+        public static ECDiffieHellmanCng Dh { get; private set; }
         public byte[] PublicKey { get; private set; }
 
         // ECDSA for signing
@@ -28,7 +28,7 @@ namespace Web_Service
         }
 
         // Derive shared AES key from other's public key
-        public byte[] DeriveSharedKey(byte[] otherPartyPublicKey)
+        public static byte[] DeriveSharedKey(byte[] otherPartyPublicKey)
         {
             var otherPubKey = ECDiffieHellmanCngPublicKey.FromByteArray(otherPartyPublicKey, CngKeyBlobFormat.EccPublicBlob);
             return Dh.DeriveKeyMaterial(otherPubKey);

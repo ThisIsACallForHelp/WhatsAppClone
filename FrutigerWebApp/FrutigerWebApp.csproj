@@ -20,6 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\API\API.csproj" />
     <ProjectReference Include="..\Data\Data.csproj" />
+    <ProjectReference Include="..\Web Service\Web Service.csproj" />
   </ItemGroup>
 
 </Project>
