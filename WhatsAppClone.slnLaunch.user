@@ -5,6 +5,10 @@
       {
         "Path": "Web Service\\Web Service.csproj",
         "Action": "Start"
+      },
+      {
+        "Path": "FrutigerWebApp\\FrutigerWebApp.csproj",
+        "Action": "Start"
       }
     ]
   }

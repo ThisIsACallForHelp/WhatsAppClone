@@ -1,5 +1,6 @@
 ﻿using Data;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Drawing;
@@ -224,7 +225,18 @@ namespace Web_Service
         public IActionResult GetQR(string data)
         {
             byte[] qrBytes = QRCode_Creator.Create(data);
-            return File(qrBytes, "image/png");
+            Bitmap bitmap;
+            using (MemoryStream MStream = new MemoryStream(qrBytes))
+            {
+                bitmap = new Bitmap(MStream); 
+            }
+            Bitmap styledBitmap = QRCode_Creator.GradientQR(bitmap);
+            using (var stream = new MemoryStream())
+            {
+                styledBitmap.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+                stream.Seek(0, SeekOrigin.Begin);
+                return File(stream.ToArray(), "image/png");
+            }
         }
 
 
