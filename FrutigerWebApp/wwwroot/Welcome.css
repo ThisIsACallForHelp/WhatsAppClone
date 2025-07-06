@@ -1,0 +1,200 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+html, body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    overflow-x: hidden; 
+    outline: 1px solid red; 
+    background: #eee; 
+}
+.Top-Menu{
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(8px);
+    height: 125px;
+    display: flex;
+
+}
+.Top-Layer {
+    height: 100vh;
+    width: 100%;
+    background: url("/images/hp___frutiger_aero_4_by_andrewa881_dixn80x.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+}
+
+.Intro{
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    height: 700px;
+    border: 5px solid black;
+    background-color: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(40px);
+    border-radius: 20px;
+    transition: 1s ease;
+    text-align: center;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.btn{
+    width: 150px;
+    height: 60px;
+    border: 5px solid black;
+    border-radius: 20px;
+    font-size: 30px;
+    background: transparent;
+    margin: 25px;
+    transition: 2s;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 30px;
+}
+.btn:hover{
+    background-color: rgb(27, 76, 167);
+    color: aquamarine;
+}
+.Description{
+    display: flex;
+    width: 1000px;
+    height: 608px;
+    margin: 0px;
+    padding: 0px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.WhoAreWe{
+    height: 608px;
+    width: 500px;
+    margin-top: 20px;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    border-right: 5px solid black;
+    border-top: 5px solid black;
+}
+.Download{
+    height: 150px;
+    width: 400px;
+    border: 5px solid black;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 70px;
+    margin: 10px;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-left: 50px;
+    background: transparent;
+    transition: 2s;
+}
+.Download:hover{
+    background-color: rgb(27, 76, 167);
+    color: aquamarine;
+}
+.MiddleLayer {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-image: url(/images/oceanic-oasis-glass-ball-water-illuminating-world-oceans-day-spirit_1174497-10351.png);
+    backdrop-filter: blur(8px);
+    background-size: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    justify-content: center;
+    align-items: center;
+}
+.BGS{
+    height: 900px;
+    width: 1600px;
+    background-color: rgb(255, 255, 255,0.4);
+    backdrop-filter: blur(40px);
+    border: 5px solid black;
+    border-radius: 20px;
+    text-align: center;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.Dark-Aero {
+    height: 808px;
+    width: 390px;
+    background-image: url(/images/Dark_Aero_3.png);
+    border-bottom-left-radius: 15px;
+    border-right: 5px solid black;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.Cyber-Glacier {
+    height: 808px;
+    width: 390px;
+    background-color: blue;
+    border-right: 5px solid black;
+    background-image: url(/images/FrutigerGlacier.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.Metal-Heart {
+    height: 808px;
+    width: 390px;
+    background-color: blue;
+    border-right: 5px solid black;
+    background-image: url('/images/Screenshot 2025-07-03 234926.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.Frutiger-Aurora {
+    height: 808px;
+    width: 390px;
+    background-color: blue;
+    border-right: 5px solid black;
+    background-image: url('/images/Screenshot 2025-07-03 235048.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.Custom{
+    height: 808px;
+    width: 390px;
+    background-color: blue;
+    border-bottom-right-radius: 15px;
+    background-color: gray;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}

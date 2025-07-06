@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Text;
 using System.Threading.Tasks;
-
+using Data;
 namespace API
 {
     public class Client<T> : IClient<T>
@@ -63,6 +63,28 @@ namespace API
             }
             this.uriBuilder.Query += $"{name}={Value}";
         }
+
+        public async Task<string> GetQR()
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                // ❗ Create a new request each time
+                var request = new HttpRequestMessage(HttpMethod.Get, this.uriBuilder.Uri);
+
+                var response = await client.SendAsync(request);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    byte[] imageBytes = await response.Content.ReadAsByteArrayAsync();
+                    string base64 = Convert.ToBase64String(imageBytes);
+                    return $"data:image/png;base64,{base64}";
+                }
+            }
+
+            return string.Empty;
+        }
+
+
 
         public async Task<T> GetAsync()
         {

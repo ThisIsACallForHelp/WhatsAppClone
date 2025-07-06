@@ -222,9 +222,9 @@ namespace Web_Service
         }
 
         [HttpGet]
-        public IActionResult GetQR(string data)
+        public IActionResult GetQR()
         {
-            byte[] qrBytes = QRCode_Creator.Create(data);
+            byte[] qrBytes = QRCode_Creator.Create("Hello Me Is Dimitry");
             Bitmap bitmap;
             using (MemoryStream MStream = new MemoryStream(qrBytes))
             {

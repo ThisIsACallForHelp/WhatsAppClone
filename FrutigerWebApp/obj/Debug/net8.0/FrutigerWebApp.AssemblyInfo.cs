@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FrutigerWebApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f7e29dabcb76418c193fbf841d4fd41707161780")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7ddd03625380ab9444f2b6f044c4dc601427a58f")]
 [assembly: System.Reflection.AssemblyProductAttribute("FrutigerWebApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FrutigerWebApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

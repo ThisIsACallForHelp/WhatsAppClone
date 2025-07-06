@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewData["Title"] = "Register";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/SignUp.css">
+    <title>AquaLink</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1 style="border-bottom: 5px solid black;"> Create Your Account</h1>
+        <form action="https://localhost:7159/User/RegisterUser" enctype="multipart/form-data">
+            <h1 style="text-align: left; margin-left: 50px;"> Enter Your Name</h1>
+            <div class="InfoGather">
+                <input type="text" placeholder="First Name ">
+                <input type="text" placeholder="Last Name" style="margin-left: 200px;">
+            </div>
+            <div class="InfoGather">
+                <div class="Email">
+                    <label style="margin-right: 75px;"> Email </label>
+                    <input type="email" placeholder="YourMail@gmail.com" style="margin-left: 75px;">
+                </div>
+                <div class="Password">
+                    <label style="margin-right: 75px;"> Password </label>
+                    <input type="password" placeholder="Secret Password" style="margin-left: 75px;">
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column; text-align: center; width: 100%; height: 130px; background-color: transparent;">
+                <label style="margin-top: 0px;"> Enter Your Phone Number</label>
+                <input type="tel" placeholder="123-456-7890" pattern="[05]{2}[0-9]{8}" required style="margin-left: 325px;">
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; width: 100%; height: 130px; background-color: transparent; border-bottom: 5px solid black;">
+                <label style="margin-bottom: 10px;">Pick Your Profile Picture</label>
+
+                <div style="position: relative; width: 300px; height: 50px;">
+                    <input type="file" accept="image/jpeg, image/png" required
+                           style="opacity: 0; width: 100%; height: 100%; position: absolute; left: 0; top: 0; z-index: 2; cursor: pointer;">
+                    <div style="border-radius: 20px;position: absolute; width: 100%; height: 100%; background-color: grey; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; border: 2px solid white; z-index: 1;">
+                        Pick An Image
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="btn" onclick="window.location.href='@Url.Action("Intro", "User")'"> Back To The Main Page </button>
+                <button type="Submit" class="Submit"> Submit</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>
+

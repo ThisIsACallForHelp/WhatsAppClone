@@ -55,7 +55,7 @@ namespace Web_Service
                     }
                     else
                     {
-                        finalQR.SetPixel(x, y, Color.White); // but dont touch it if its white
+                        finalQR.SetPixel(x, y, Color.Transparent); // but dont touch it if its white
                     }
                 }
             }

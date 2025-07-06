@@ -5,6 +5,8 @@ using System.Net;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
 using Web_Service;
+using System.IO;
+using Microsoft.CodeAnalysis.FlowAnalysis.DataFlow.CopyAnalysis;
 namespace FrutigerWebApp
 {
     public class UserController : Controller
@@ -24,12 +26,39 @@ namespace FrutigerWebApp
             return View(await Client.GetAsync());
         }
 
-        [HttpGet("Introduction")]
+        [HttpGet]
         public IActionResult Intro()
         {
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RegisterUser(User user, IFormFile PFP)
+        {
+            string PathToIMG = string.Empty;
+            string Folder = Path.Combine("C:\\Trivia_Game\\WhatsAppClone\\Web Service", "wwwroot", "Users");
+            string IMG = Guid.NewGuid().ToString() + "_" + Path.GetFileName(PFP.FileName);
+            var Save = Path.Combine(Folder, IMG);
+            using (var stream = new FileStream(Save, FileMode.Create))
+            {
+                await PFP.CopyToAsync(stream);
+            }
+            user.Avatar = IMG;
+            Client<User> client = new Client<User>()
+            {
+                Schema = "https",
+                Host = "localhost",
+                Port = 7189,
+                Path = "api/User/Register"
+            };
+            return View(await client.PostAsync(user));
+        }
         [HttpPost]
         public async Task<IActionResult> SendMessage(Message message)
         {
@@ -51,9 +80,20 @@ namespace FrutigerWebApp
         }
 
         [HttpGet]
-        public IActionResult SignInViaQR()
+        public async Task<IActionResult> SignInViaQR()
         {
-            return View();
+            Client<QRCode> client = new Client<QRCode>()
+            {
+                Schema = "https",
+                Host = "localhost",
+                Port = 7189,
+                Path = "api/User/GetQR"
+            };
+            QRCode QrCode = new QRCode()
+            {
+                QR_Code = await client.GetQR()
+            };
+            return View(QrCode);
         }
 
         [HttpGet]

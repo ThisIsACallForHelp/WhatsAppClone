@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(images/wp2787640.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.Container {
+    height: 925px;
+    width: 1600px;
+    border: 5px solid black;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(8px); 
+    display: block;
+}
+.Top {
+    width: 100%;
+    height: 100px;
+    border-bottom: 5px solid black;
+    display: flex;
+}
+.ChatWrapper{
+    height: 825px;
+    border-right: 5px solid black;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Options{
+    width: 750px;
+    height: 100px;
+    margin-left: 300px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+}
+.OptionBtn{
+    width: 100px;
+    height: 50px;
+    border: 5px solid black;
+    border-radius: 20px;
+    background: transparent;
+    margin-left: 40px;
+    font-size: 20px;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.UserPFP{
+    height: 85px;
+    width: 85px;
+    border: 2px solid black;
+    border-radius: 50%;
+    margin: 5px;
+    margin-left: 275px;
+}
+.Chats{
+    height: 760px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+    border: 5px solid black;
+    border-radius: 20px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+}
+.Chats::-webkit-scrollbar {
+    display: none;
+}
+.Search{
+    display: flex;
+    width: 400px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin-top: 25px;
+    justify-content: flex-start;
+    align-items: center;
+}
+.SearchBar{
+    width: 400px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+i{
+    font-size: 30px;
+    margin-left: 10px;
+    cursor: pointer;;
+}
+.Request{
+    outline: none;
+    height: 50px;
+    width: 325px;
+    margin-left: 10px;
+    background: transparent;
+    border: none;
+    border-left: 2px solid black;
+    font-size: 40px;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.SingleChat{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    width: 450px;
+    height: 75px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.ChatIMG{
+    border: 2px solid black;
+    margin-left: 5px;
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+}
+.ChatInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    width: 380px;
+    height: 75px;
+    overflow: hidden;
+}
+
+.ChatName {
+    margin: 10px 0 0 20px;
+    height: 25px;
+    width: 300px;
+}
+
+.ChatName h1 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.LastMessage {
+    margin: 2px 0 0 20px;
+    height: 20px;
+    width: 300px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.LastMessage p {
+    font-size: 18px;
+    margin: 0;
+    color: #444;
+}
+.Messages{
+    background-color: transparent;
+    width: 1100px;
+    height:820px;
+    border: none;
+    border-bottom-right-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.Bottom{
+    display: flex;
+}
+.Convo{
+    display: flex;
+    flex-direction: column;
+    width: 1040px;
+    border: none;
+    padding: 30px;
+    height: 800px;
+}
+.SendMessage{
+    height: 75px; 
+    width: 1100px; 
+    border: none; 
+    border-bottom-right-radius: 15px;
+    display: flex;
+    justify-content: flex-start;
+}
+.SenderMessage{  
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 600px;
+}
+
+.SenderMessage p{
+    min-width: 20px;
+    background: linear-gradient(135deg,  #a0e3f0 0%, #7fd1d5 25%, #54b8c3 50%, #FFFFFF 75%, #b8faff 100%);
+    border: 2px solid #57e389;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 10px;
+    min-height: 20px;
+    max-height: 500px;
+    display: inline-block; 
+    white-space: pre-wrap; 
+    word-wrap: break-word; 
+}
+
+
+.RecieverMessage{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.RecieverMessage p{
+    min-width: 20px;
+    background: linear-gradient(135deg,  #a0e3f0 0%, #7fd1d5 25%, #54b8c3 50%, #FFFFFF 75%, #b8faff 100%);
+    border: 2px solid #57e389;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 10px;
+    min-height: 20px;
+    max-height: 500px;
+    display: inline-block; /* Change from inline */
+    white-space: pre-wrap; /* Ensures line breaks for long text */
+    word-wrap: break-word; /* Ensures words break if too long */
+}
+
+.MessageBar{
+    height: 50px;
+    width: 1100px;
+    border: 5px solid black;
+    display: flex;
+    margin: 5px;
+    margin-left: 20px;
+    justify-content: flex-start;
+    border-radius: 20px;
+}
+

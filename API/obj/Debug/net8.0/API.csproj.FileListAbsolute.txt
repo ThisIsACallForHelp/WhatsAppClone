@@ -11,3 +11,6 @@ C:\Trivia_Game\WhatsAppClone\API\obj\Debug\net8.0\API.dll
 C:\Trivia_Game\WhatsAppClone\API\obj\Debug\net8.0\refint\API.dll
 C:\Trivia_Game\WhatsAppClone\API\obj\Debug\net8.0\API.pdb
 C:\Trivia_Game\WhatsAppClone\API\obj\Debug\net8.0\ref\API.dll
+C:\Trivia_Game\WhatsAppClone\API\bin\Debug\net8.0\Data.dll
+C:\Trivia_Game\WhatsAppClone\API\bin\Debug\net8.0\Data.pdb
+C:\Trivia_Game\WhatsAppClone\API\obj\Debug\net8.0\API.csproj.Up2Date

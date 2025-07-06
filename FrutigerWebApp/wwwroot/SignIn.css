@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+body{
+    background:url(/images/planet-earth-goes-on-a-vacation-at-a-beautiful-green-meadow-free-photo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Container{
+    height: 800px;
+    width: 1000px;
+    border-radius: 20px;
+    border: 5px solid black;
+    background-color: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(8px); 
+    display: block;
+}
+.Container h1{
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px; 
+    text-align: center;
+}
+.Bottom{
+    display: flex;
+    height: 575px;
+    width: 1000px;
+    border: none;
+}
+.Instructions{   
+    text-decoration: none;
+    text-align: center;
+    height: 575px;
+    width: 450px;
+}
+.Qr-Code{
+    height: 575px;
+    width: 500px;
+    justify-content: center; 
+    align-items: center;
+    margin: 25px;
+    margin-top: 50px;
+}
+.BtnDiv{
+    height: 90px;
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+}
+.Back-Btn{
+    height: 105px;
+    background: transparent;
+    border: 6px solid black;
+    width: 1000px;
+    text-align: center;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    cursor: pointer;
+    transition:2s;
+    font-size: 70px;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.Back-Btn:hover{
+    animation-name: BtnBG;
+    animation-duration: 2s;
+    animation-iteration-count: 1 ease;
+    animation-fill-mode: forwards
+}
+@keyframes BtnBG{
+    0% {
+    background-color: transparent;
+    color: black;
+    }
+    25% {
+    background: linear-gradient(135deg, #cceef3, #a0dfe5);
+    color: #3aff95;
+    }
+    50% {
+    background: linear-gradient(135deg, #a0e3f0, #7fd1d5);
+    color: #3aff95;
+    }
+    75% {
+    background: linear-gradient(135deg, #7fd1d5, #54b8c3);
+    color: #12ff75;
+    }
+    100% {
+    background: linear-gradient(135deg, #a0e3f0 0%, #7fd1d5 25%, #54b8c3 50%, #ffffff 75%, #b8faff 100%);
+    color: #12ff75;
+    }
+}
+.circe{
+    height: 50px;
+    width: 50px;
+    border: 5px solid black;
+    border-radius: 50%;
+}

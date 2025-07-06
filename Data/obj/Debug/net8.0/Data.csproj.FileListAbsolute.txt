@@ -10,3 +10,4 @@ C:\Trivia_Game\WhatsAppClone\Data\obj\Debug\net8.0\refint\Data.dll
 C:\Trivia_Game\WhatsAppClone\Data\obj\Debug\net8.0\Data.pdb
 C:\Trivia_Game\WhatsAppClone\Data\obj\Debug\net8.0\ref\Data.dll
 C:\Trivia_Game\WhatsAppClone\Data\obj\Debug\net8.0\Data.sourcelink.json
+C:\Trivia_Game\WhatsAppClone\Data\obj\Debug\net8.0\Data.csproj.AssemblyReference.cache

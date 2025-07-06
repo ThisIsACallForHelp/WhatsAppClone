@@ -1,0 +1,86 @@
+﻿@using Data;
+@model MainPage;
+@{
+    ViewData["Title"] = "GetChats";
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+    int i =0;
+    string ID = Context.Session.GetString("UserID");
+}
+
+<div class="ChatWrapper">
+    <div class="Chats">
+        <div class="SearchBar" style="margin-bottom: 10px;">
+            <form class="Search">
+                <i class="ri-search-line"></i>
+                <input type="text" class="Request" placeholder="Search For A Chat">
+            </form>
+        </div>
+        @foreach(Chat chat in Model.Chats)
+        {
+            <div class="SingleChat">
+                <div class="ChatIMG">
+                    <img src="images/Screenshot 2025-06-24 225303.png" style="width: 55px; height: 55px; border-radius: 50%;">
+                </div>
+                <div class="ChatInfo">
+                    <div class="ChatName">
+                        <h1 style="font-size: 25px; margin-bottom: 5px;">Hello</h1>
+                    </div>
+                    <div class="LastMessage">
+                        <p>User: You Are Gay As Fuck</p>
+                    </div>
+                </div>
+            </div>
+        }
+        @foreach(GroupChat groupChat in Model.GroupChats)
+        {
+            <div class="SingleChat">
+                <div class="ChatIMG">
+                    <img src="images/Screenshot 2025-06-24 225303.png" style="width: 55px; height: 55px; border-radius: 50%;">
+                </div>
+                <div class="ChatInfo">
+                    <div class="ChatName">
+                        <h1 style="font-size: 25px; margin-bottom: 5px;">Hello</h1>
+                    </div>
+                    <div class="LastMessage">
+                        <p>@Model.User.FirstName: @Model.Messages[i]</p>
+                    </div>
+                </div>
+            </div>
+            i++;
+        }
+
+    </div>
+</div>
+    <div class="Messages">
+    @if(Model.Convo != null)
+    {
+        <div class="Convo">
+            @foreach (Message message in Model.Messages)
+            {
+                if (message.SenderID.Equals(ID))
+                {
+                    <div class="SenderMessage">
+                        <p style="margin: 0px;">In Case No One Told You This Today...</p>
+                    </div>
+                }
+                else
+                {
+                    <div class="RecieverMessage">
+                        <p>Look At The Chats</p>
+                    </div>
+                }
+            }
+        </div>
+    }
+    
+    <div class="SendMessage">
+        <div class="MessageBar">
+            <i class="ri-arrow-left-double-fill" style="width: 30px; height: 50px; font-size: 40px; margin-top: 5px; margin-left: 5px;"></i>
+            <input type="Text" placeholder="Send A Message..." class="Request" style="width: 890px;height: 48px; border: none;">
+            <i class="ri-add-circle-line" style="width: 50px; height: 50px; font-size: 40px; margin-top: 5px;"></i>
+            <i class="ri-mic-line" style="width: 50px; height: 50px; font-size: 40px; margin-top: 5px;"></i>
+        </div>
+
+    </div>
+</div>
+

@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+body{
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    background-image: url(/images/6b99db31aafa2bfa1442cecf8da2bdfb.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper{
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(40px);
+    width: 950px;
+    height: 650px;
+    border: 5px solid black;
+    border-radius: 20px;
+    text-align: center;
+    margin: 0px;
+}
+.wrapper h1{
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0px; 
+    font-size: 50px;
+    margin-top: 10px;
+}
+form{
+    width: 100%;
+    background-color: transparent;
+    height: 580px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+label{
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-left: 50px;
+    font-size: 30px;
+}
+.InfoGather{
+    display: flex; 
+    height: 100px; 
+    width: 100%; 
+    background-color: transparent; 
+    align-items: center; 
+    justify-content: flex-start;
+}
+input{
+    height: 50px;
+    border: 5px solid black;
+    border-radius: 20px;
+    margin-top: 5px;
+    margin-left: 50px;
+    width: 300px;
+}
+.Password{
+    display: flex;
+    flex-direction: column;
+    width: 475px;
+    height: 100px;
+    background-color: transparent;
+}
+.Email{
+    display: flex;
+    flex-direction: column;
+    width: 475px;
+    height: 100px;
+    background-color: transparent;
+}
+input[type = "file"]{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.btn{
+    height: 100px; 
+    width: 50%; 
+    border: none;
+    border-right: 5px solid black;
+    border-bottom-left-radius: 15px; 
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    transition: 2s;   
+}
+.btn:hover{
+    background-color: #de361c;
+    color: rgb(27, 76, 167);
+}
+.Submit{
+    border: none;
+    transition: 2s;
+    height: 100px; 
+    width: 50%;
+    border-bottom-right-radius: 15px;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+}
+.Submit:hover{
+    background-color: #a4f9c8;
+    color: rgb(27, 76, 167);
+}
+.buttons{
+    display: flex;
+}

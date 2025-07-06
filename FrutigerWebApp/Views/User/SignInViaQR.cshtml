@@ -1,7 +1,62 @@
-﻿
+﻿@using Data;
+@model QRCode;
 @{
     ViewData["Title"] = "SignInViaQR";
+    Layout = null;
 }
 
-<h1>SignInViaQR</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/SignIn.css">
+    <title>AquaLink</title>
+</head>
+<body>
+    <div class="Container">
+        <h1> Welcome Back To AquaLink!</h1>
+        <div class="Bottom">
+            <div class="Instructions">
+                <h1 style="font-size: 40px;"> It's Good To See You Back!</h1>
+                <h2 style="margin: 0px;"> We Are Glad To See You Back, We Missed You!</h2>
+                <br>
+                <h2 style="margin: 0px;"> To Log Into AquaLink WEB, Please Follow These Steps:</h2>
+                <br>
+                <div style="display: flex; flex-direction: column; text-align: left; height: 400px; width: 500px; padding: 20px;">
+                    <div style="display: flex;">
+                        <div class="circe">
+                            <h1 style="margin: 0px;"> 1</h1>
+                        </div>
+                        <h2 style="margin-left: 30px;">Open Our App</h2>
+                    </div>
+                    <br>
+                    <div style="display: flex;">
+                        <div class="circe">
+                            <h1 style="margin: 0px;"> 2</h1>
+                        </div>
+                        <h2 style="margin-left: 30px;"> Tap <i class="ri-camera-line"></i></h2>
+                    </div>
+                    <br>
+                    <div style="display: flex;">
+                        <div class="circe">
+                            <h1 style="margin: 0px;"> 3</h1>
+                        </div>
+                        <h2 style="margin-left: 30px;"> And Scan The QR Code!</h2>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="Qr-Code">
+                <img src="@Model.QR_Code" style="border: 5px solid black; background: url(/images/pngtree-blue-gradient-purifier-poster-background-template-image_140364.jpg); background-size: cover;">
+            </div>
+        </div>
+        <div class="BtnDiv">
+            <button class="Back-Btn" onclick="window.location.href='@Url.Action("Intro","User")'"> Back </button>
+        </div>
+    </div>
+</body>
+</html>
 
