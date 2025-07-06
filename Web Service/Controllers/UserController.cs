@@ -224,18 +224,41 @@ namespace Web_Service
         [HttpGet]
         public IActionResult GetQR()
         {
-            byte[] qrBytes = QRCode_Creator.Create("Hello Me Is Dimitry");
-            Bitmap bitmap;
-            using (MemoryStream MStream = new MemoryStream(qrBytes))
+            try
             {
-                bitmap = new Bitmap(MStream); 
+                Token token = new Token()
+                {
+                    ID = QRCode_Creator.GetToken(),
+                    CreatedAt = DateTime.Now,
+                    ExpiresAt = DateTime.UtcNow.AddMinutes(1),
+                    UserID = null
+                };
+                if (!this.UOW.TokenRepository.Create(token))
+                {
+                    return null;
+                }
+                byte[] qrBytes = QRCode_Creator.Create(token.ID);
+                Bitmap bitmap;
+                using (MemoryStream MStream = new MemoryStream(qrBytes))
+                {
+                    bitmap = new Bitmap(MStream);
+                }
+                Bitmap styledBitmap = QRCode_Creator.GradientQR(bitmap);
+                using (var stream = new MemoryStream())
+                {
+                    styledBitmap.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+                    stream.Seek(0, SeekOrigin.Begin);
+                    return File(stream.ToArray(), "image/png");
+                }
             }
-            Bitmap styledBitmap = QRCode_Creator.GradientQR(bitmap);
-            using (var stream = new MemoryStream())
+            catch(Exception ex)
             {
-                styledBitmap.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
-                stream.Seek(0, SeekOrigin.Begin);
-                return File(stream.ToArray(), "image/png");
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+            finally
+            {
+                this.dbContext.CloseConnection();
             }
         }
 

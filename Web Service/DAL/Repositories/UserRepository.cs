@@ -11,8 +11,8 @@ namespace Web_Service
         }
         public bool Create(User user)
         {
-            string sql = $@"INSERT INTO User(UserID, PhoneNumber, FirstName, LastName, Email, Password, Avatar, Token)
-                                        VALUES(@UserID,@PhoneNumber,@FirstName,@LastName,@Email,@Password, @Avatar, @Token)";
+            string sql = $@"INSERT INTO User(UserID, PhoneNumber, FirstName, LastName, Email, Password, Avatar)
+                                        VALUES(@UserID,@PhoneNumber,@FirstName,@LastName,@Email,@Password, @Avatar)";
             base.dbContext.AddParameters("@UserID", user.ID);
             base.dbContext.AddParameters("@FirstName", user.FirstName);
             base.dbContext.AddParameters("@PhoneNumber", user.PhoneNumber);

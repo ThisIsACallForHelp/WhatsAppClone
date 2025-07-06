@@ -12,6 +12,19 @@ namespace Web_Service
         UserCreator userCreator;
         ArchiveCreator archiveCreator;
         JoinedCreator joinedCreator;
+        TokenCreator tokenCreator;
+
+        public TokenCreator TokenCreator
+        {
+            get
+            {
+                if (this.tokenCreator == null)
+                {
+                    this.tokenCreator = new TokenCreator();
+                }
+                return this.tokenCreator;
+            }
+        }
         public AttachmentsCreator AttachmentsCreator
         {
             get

@@ -10,11 +10,23 @@
         UserRepository userRepository;
         ArchiveRepository archiveRepository;
         JoinedRepository joinedRepository;
+        TokenRepository tokenRepository;
 
         DBContext dbContext;
         public UOW(DBContext dbcontext)
         {
             this.dbContext = DBContext.GetInstance();
+        }
+        public TokenRepository TokenRepository
+        {
+            get
+            {
+                if (this.tokenRepository == null)
+                {
+                    this.tokenRepository = new TokenRepository(this.dbContext);
+                }
+                return this.tokenRepository;
+            }
         }
         public AttachmentRepository AttachmentRepository 
         {

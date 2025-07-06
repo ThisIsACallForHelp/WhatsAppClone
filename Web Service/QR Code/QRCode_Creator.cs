@@ -1,18 +1,38 @@
-﻿using QRCoder;
+﻿using Data;
+using QRCoder;
+using QRCoder;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
-using QRCoder;
-using System.Drawing.Drawing2D;
+using System.Security.Cryptography;
+using System.Text;
 namespace Web_Service
 {
     public class QRCode_Creator
     {
         
-        public static byte[] Create(string data)
+        public static string GetToken()
+        {            
+            string buffer = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            StringBuilder Token = new StringBuilder();
+            using (RandomNumberGenerator rng = RandomNumberGenerator.Create())
+            {
+                byte[] randomByte = new byte[1];
+
+                for (int i = 0; i < 32; i++)
+                {
+                    rng.GetBytes(randomByte);
+                    int index = randomByte[0] % buffer.Length;
+                    Token.Append(buffer[index]);
+                }
+                return Token.ToString();
+            }
+        }
+        public static byte[] Create(string Token)
         {
             using (QRCodeGenerator qrGenerator = new QRCodeGenerator())
-            using (QRCodeData qrCodeData = qrGenerator.CreateQrCode(data, QRCodeGenerator.ECCLevel.Q))
+            using (QRCodeData qrCodeData = qrGenerator.CreateQrCode(Token, QRCodeGenerator.ECCLevel.Q))
             using (PngByteQRCode qrCode = new PngByteQRCode(qrCodeData))
             {
 
