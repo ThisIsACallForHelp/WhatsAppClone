@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/User/GetMainPage/Main": {
+    "/api/User/GetMainPage": {
       "get": {
         "tags": [
           "User"
@@ -543,10 +543,6 @@
             "type": "string",
             "format": "date-time",
             "nullable": true
-          },
-          "content": {
-            "type": "string",
-            "nullable": true
           }
         },
         "additionalProperties": false
@@ -606,10 +602,6 @@
             "nullable": true
           },
           "avatar": {
-            "type": "string",
-            "nullable": true
-          },
-          "token": {
             "type": "string",
             "nullable": true
           }

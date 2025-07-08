@@ -14,7 +14,6 @@ namespace Web_Service
                 SenderID = Convert.ToString(src["SenderID"]),
                 SentAt = Convert.ToDateTime(src["SentAt"]),
                 ID = Convert.ToString(src["MessageID"]),
-                Content = Convert.ToString(src["Content"]),
                 Attachments = Convert.ToString(src["Attachments"]),
                 SenderPublicKeyBase64 = Convert.ToString(src["SenderPublicKeyBase64"]),
                 SenderSigningKeyBase64 = Convert.ToString(src["SenderSigningKeyBase64"]),

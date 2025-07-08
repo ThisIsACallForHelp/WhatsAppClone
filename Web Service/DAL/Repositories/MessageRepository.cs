@@ -51,7 +51,7 @@ namespace Web_Service
             base.dbContext.AddParameters("@MessageID", message.ID);
             base.dbContext.AddParameters("@SenderID", message.SenderID);
             base.dbContext.AddParameters("@SentAt", message.SentAt.ToString());
-            base.dbContext.AddParameters("@Content", message.Content);
+            base.dbContext.AddParameters("@CipherTextBase64", message.CipherTextBase64);
             base.dbContext.AddParameters("@Attachments", message.Attachments);
             return base.dbContext.Update(sql) > 0;
         }
@@ -125,7 +125,7 @@ namespace Web_Service
         {
             string sql = $@"SELECT  Message.SenderID, 
                                     Message.SentAt, 
-                                    Message.Content, 
+                                    Message.CipherTextBase64, 
                                     Message.ChatID, 
                                     Message.Attachments 
                             FROM Message LEFT JOIN GroupChat ON Message.ChatID = GroupChat.ChatID
@@ -143,7 +143,7 @@ namespace Web_Service
 
         public Message GetLastMessages(string UserID,string ChatID)
         {
-            string sql = $@"SELECT TOP 1 * FROM Message LEFT JOIN Chat
+            string sql = $@"SELECT TOP 1 Message.* FROM Message LEFT JOIN Chat
                             ON Message.ChatID = Chat.ChatID WHERE 
                             (Message.FirstUserID = '{UserID}' OR 
                             Message.SecondUserID = '{UserID}') AND 

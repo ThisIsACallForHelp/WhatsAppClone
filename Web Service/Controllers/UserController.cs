@@ -22,7 +22,7 @@ namespace Web_Service
             this.UOW = new UOW(this.dbContext);
         }
 
-        [HttpGet("Main")]
+        [HttpGet]
         //works
         public MainPage GetMainPage(string userID , string ChatID, bool IsGroup = false)
         {
@@ -226,12 +226,13 @@ namespace Web_Service
         {
             try
             {
+                this.dbContext.OpenConnection();
                 Token token = new Token()
                 {
                     ID = QRCode_Creator.GetToken(),
                     CreatedAt = DateTime.Now,
                     ExpiresAt = DateTime.UtcNow.AddMinutes(1),
-                    UserID = null
+                    UserID = "NONE"
                 };
                 if (!this.UOW.TokenRepository.Create(token))
                 {

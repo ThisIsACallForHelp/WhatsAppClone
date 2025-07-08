@@ -15,7 +15,6 @@ namespace Web_Service
                 Password = Convert.ToString(src["Password"]),
                 PhoneNumber = Convert.ToString(src["PhoneNumber"]),
                 Avatar = "https://localhost:7189/Users/" + Convert.ToString(src["Avatar"]),
-                Token = Convert.ToString(src["Token"])
             };
         }
     }

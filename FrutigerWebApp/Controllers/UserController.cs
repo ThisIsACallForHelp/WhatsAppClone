@@ -15,14 +15,19 @@ namespace FrutigerWebApp
         {
             return View();
         }
-        [HttpGet("Chats")]
-        public async Task<IActionResult> GetChats(string UserID)
+        [HttpGet]
+        public async Task<IActionResult> GetChats(string UserID = "Nmx", string? ChatID = "FR", bool IsGroup = false)
         {
             Client<MainPage> Client = new Client<MainPage>()
             {
-                Path = "api/User/GetMainPage"
+                Path = "api/User/GetMainPage",
+                Host = "localhost",
+                Port = 7189,
+                Schema = "https"
             };
             Client.AddParams("UserID", UserID);
+            Client.AddParams("ChatID", ChatID);
+            Client.AddParams("IsGroup", IsGroup.ToString());
             return View(await Client.GetAsync());
         }
 

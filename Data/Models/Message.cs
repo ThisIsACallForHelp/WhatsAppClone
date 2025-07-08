@@ -21,7 +21,6 @@ namespace Data
         public string? Attachments { get; set; }
         public string? SenderID { get; set; }
         public DateTime? SentAt { get; set; }
-        public string? Content { get; set; }
     }
     //use attachments as a long string and then get it from the db using the ID
     //each attachment will have a fixed length of characters.  

@@ -111,7 +111,7 @@
   {
     "ContainingType": "Web_Service.UserController",
     "Method": "GetMainPage",
-    "RelativePath": "api/User/GetMainPage/Main",
+    "RelativePath": "api/User/GetMainPage",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
