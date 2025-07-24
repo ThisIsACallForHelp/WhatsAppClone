@@ -26,6 +26,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=User}/{action=Intro}/{id?}");
+    pattern: "{controller=User}/{action=GetChats}/{id?}");
 
 app.Run();

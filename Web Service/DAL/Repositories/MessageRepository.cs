@@ -23,24 +23,25 @@ namespace Web_Service
 
         public bool Create(Message message)
         {
-            string sql = $@"INSERT INTO Message(MessageID, CipherTextBase64, IVBase64, HmacBase64, SignatureBase64, 
-                                                SenderPublicKeyBase64, SenderSigningKeyBase64, ChatID, Attachments, SenderID, SentAt)
-                                        VALUES(@MessageID, @CipherTextBase64, @IVBase64, @HmacBase64, @SignatureBase64, 
-                                                @SenderPublicKeyBase64, @SenderSigningKeyBase64, @ChatID, @Attachments, @SenderID, @SentAt)";
+            string sql = @$"INSERT INTO Message(MessageID, SenderID, SentAt, CipherTextBase64, Attachments, ChatID, IVBase64,
+                                        HmacBase64, SignatureBase64, SenderPublicKeyBase64, SenderSigningKeyBase64)
+                   VALUES(@MessageID, @SenderID, #{message.SentAt}#, @CipherTextBase64, @Attachments, 
+                          @ChatID, @IVBase64, @HmacBase64, @SignatureBase64, @SenderPublicKeyBase64, @SenderSigningKeyBase64)";
+
             base.dbContext.AddParameters("@MessageID", message.ID);
+            base.dbContext.AddParameters("@SenderID", message.SenderID);
             base.dbContext.AddParameters("@CipherTextBase64", message.CipherTextBase64);
+            base.dbContext.AddParameters("@Attachments", message.Attachments);
+            base.dbContext.AddParameters("@ChatID", message.ChatID);
             base.dbContext.AddParameters("@IVBase64", message.IVBase64);
             base.dbContext.AddParameters("@HmacBase64", message.HmacBase64);
             base.dbContext.AddParameters("@SignatureBase64", message.SignatureBase64);
             base.dbContext.AddParameters("@SenderPublicKeyBase64", message.SenderPublicKeyBase64);
             base.dbContext.AddParameters("@SenderSigningKeyBase64", message.SenderSigningKeyBase64);
-            base.dbContext.AddParameters("@ChatID", message.ChatID);
-            base.dbContext.AddParameters("@Attachments", message.Attachments);
-            base.dbContext.AddParameters("@SenderID", message.SenderID);
-            base.dbContext.AddParameters("@SentAt", message.SentAt.ToString());
 
             return base.dbContext.Create(sql) > 0;
         }
+
         public bool Update(Message message)
         {
             string sql = $@"UPDATE Message SET SenderID = @SenderID, 

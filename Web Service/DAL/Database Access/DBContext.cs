@@ -98,9 +98,14 @@ namespace Web_Service
             return this.ChangeDB(sql);
         }
         public void AddParameters(string ParamName, string ParamValue)
-        //Add parameters with a value to coommand
+        //Add parameters with a value to command
         {
             this.command.Parameters.Add(new OleDbParameter(ParamName, ParamValue));
+        }
+        public void AddDateTimeParam(string ParamName, DateTime Date)
+        //Add Date params 
+        {
+            this.command.Parameters.Add(new OleDbParameter(ParamName, Date));
         }
         public void ClearParameters()
         //clear the parameters 

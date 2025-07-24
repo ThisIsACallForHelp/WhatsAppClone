@@ -1,11 +1,16 @@
 ﻿using Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using System;
 using System.Drawing;
 using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 using System.Security.Cryptography.Xml;
+using System.Text;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Web_Service
 {
@@ -126,7 +131,7 @@ namespace Web_Service
         }
         [HttpPost("Register")]
         //should work 
-        public int Register(User user)
+        public string Register(User user)
         {
             try
             {
@@ -136,7 +141,7 @@ namespace Web_Service
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                return 0;
+                return "NULL";
             }
             finally
             {
@@ -265,24 +270,66 @@ namespace Web_Service
 
 
         [HttpPost]
-        public bool SendMessage(Message message)
+        public string SendMessage(string Text, string SenderID = "gjifodsa")
         {
             try
-            {
-                this.dbContext.OpenConnection();
-                byte[] CipherText = Convert.FromBase64String(message.CipherTextBase64);
-                byte[] SenderSigningKey = Convert.FromBase64String(message.SenderSigningKeyBase64);
-                byte[] Signature = Convert.FromBase64String(message.SignatureBase64);
-                if (!DHEncryption.VerifySignature(CipherText, Signature, SenderSigningKey))
+            {              
+                //string message, byte[] key, out byte[] iv, out byte[] hmac Encrypt
+                //byte[] ciphertext, byte[] key, byte[] iv, byte[] hmac Decrypt                 
+                this.dbContext.OpenConnection();                
+                DHEncryption dh = new DHEncryption();
+                ECDsaCng dsa = new ECDsaCng(CngKey.Create(CngAlgorithm.ECDsaP256));
+                dsa.HashAlgorithm = CngAlgorithm.Sha256;
+                User user = this.UOW.UserRepository.GetByID(SenderID);
+                this.dbContext.ClearParameters();
+                byte[] SingningPublicKey = dsa.Key.Export(CngKeyBlobFormat.EccPublicBlob);
+                byte[] PublicKey = DHEncryption.DeriveSharedKey(Convert.FromBase64String(user.RecipientPublicKeyBase64));
+                byte[] SenderSigningPublicKey = Convert.FromBase64String(user.RecipientSigningKeyBase64);
+                byte[] hmac, iv;
+
+                byte[] CipherText = DHEncryption.EncryptMessage(Text, PublicKey, out iv, out hmac);
+
+                byte[] Signature = dsa.SignData(CipherText);
+
+                using (ECDsaCng verifier = new ECDsaCng(CngKey.Import(SingningPublicKey, CngKeyBlobFormat.EccPublicBlob)))
                 {
-                    throw new CryptographicException("Signature Verification Failed");
+                    verifier.HashAlgorithm = CngAlgorithm.Sha256;
+                    bool valid = verifier.VerifyData(CipherText, Signature);
+                    Console.WriteLine("Signature valid? " + valid);
+                    
                 }
-                return this.UOW.MessageRepository.Create(message);
+                //gjifodsa
+                Message message = new Message
+                {
+                    SenderID = SenderID,
+                    CipherTextBase64 = Convert.ToBase64String(CipherText),
+                    SenderPublicKeyBase64 = Convert.ToBase64String(PublicKey),
+                    SenderSigningKeyBase64 = Convert.ToBase64String(SenderSigningPublicKey),
+                    SignatureBase64 = Convert.ToBase64String(Signature),
+                    IVBase64 = Convert.ToBase64String(iv),
+                    HmacBase64 = Convert.ToBase64String(hmac),
+                    Attachments = "TEST",
+                    SentAt = DateTime.Now,
+                    ChatID = "TEST",
+                    ID = Guid.NewGuid().ToString()
+                };
+                Console.WriteLine($"SignatureBase64.Length -> {message.SignatureBase64.Length}");
+                Console.WriteLine($"IVBase64.Length -> {message.IVBase64.Length}");
+                Console.WriteLine($"SenderPublicKeyBase64.Length -> {message.SenderPublicKeyBase64.Length}");
+                Console.WriteLine($" SenderSigningKeyBase64.Length -> {message.SenderSigningKeyBase64.Length}");
+                Console.WriteLine($"CipherTextBase64.Length -> {message.CipherTextBase64.Length}");
+                Console.WriteLine($"HmacBase64.Length -> {message.HmacBase64.Length}");
+
+                if (this.UOW.MessageRepository.Create(message))
+                {
+                    return DHEncryption.DecryptMessage(CipherText, PublicKey, iv, hmac);
+                }
+                return "COULDNT STORE THE MESSAGE IN THE DB";
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                return false;
+                return null;
             }
             finally
             {

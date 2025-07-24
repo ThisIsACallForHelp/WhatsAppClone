@@ -7,7 +7,7 @@ namespace Web_Service
         public static ECDiffieHellmanCng Dh { get; private set; }
         public byte[] PublicKey { get; private set; }
 
-        // ECDSA for signing
+        // ECDSA for signing data
         private ECDsaCng dsa;
         public byte[] PublicSigningKey { get; private set; }
 
@@ -17,17 +17,22 @@ namespace Web_Service
             Dh = new ECDiffieHellmanCng
             {
                 KeyDerivationFunction = ECDiffieHellmanKeyDerivationFunction.Hash,
+                //derive the key 
                 HashAlgorithm = CngAlgorithm.Sha256
+                //using the SHA256 Algorithm
             };
             PublicKey = Dh.PublicKey.ToByteArray();
-
+            //convert it to byte array
             // Setup ECDSA for signing/verifying
             dsa = new ECDsaCng(CngKey.Create(CngAlgorithm.ECDsaP256));
+            //create the dsa 
             dsa.HashAlgorithm = CngAlgorithm.Sha256;
+            //SHA 256 algorithm
             PublicSigningKey = dsa.Key.Export(CngKeyBlobFormat.EccPublicBlob);
+            //export the key
         }
 
-        // Derive shared AES key from other's public key
+        // derive shared AES key from other's public key
         public static byte[] DeriveSharedKey(byte[] otherPartyPublicKey)
         {
             var otherPubKey = ECDiffieHellmanCngPublicKey.FromByteArray(otherPartyPublicKey, CngKeyBlobFormat.EccPublicBlob);
@@ -35,20 +40,21 @@ namespace Web_Service
         }
 
         // Sign data with private ECDSA key
+        //change ts pls 
         public byte[] SignData(byte[] data)
         {
             return dsa.SignData(data);
         }
 
         // Static method to verify signature using sender's public signing key
-        public static bool VerifySignature(byte[] data, byte[] signature, byte[] senderPublicSigningKey)
+        public bool VerifySignature(byte[] data, byte[] signature, byte[] senderPublicSigningKey)
         {
             using (var ecdsa = new ECDsaCng(CngKey.Import(senderPublicSigningKey, CngKeyBlobFormat.EccPublicBlob)))
             {
-                ecdsa.HashAlgorithm = CngAlgorithm.Sha256;
-                return ecdsa.VerifyData(data, signature);
+                return ecdsa.VerifyData(data, signature, HashAlgorithmName.SHA256);
             }
         }
+
 
         // Encrypt message using AES-CBC + HMAC-SHA256 for authentication
         public static byte[] EncryptMessage(string message, byte[] key, out byte[] iv, out byte[] hmac)

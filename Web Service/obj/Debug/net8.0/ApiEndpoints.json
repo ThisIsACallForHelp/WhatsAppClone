@@ -170,7 +170,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Int32",
+        "Type": "System.String",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -220,14 +220,19 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "message",
-        "Type": "Data.Message",
-        "IsRequired": true
+        "Name": "Text",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SenderID",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Boolean",
+        "Type": "System.String",
         "MediaTypes": [
           "text/plain",
           "application/json",

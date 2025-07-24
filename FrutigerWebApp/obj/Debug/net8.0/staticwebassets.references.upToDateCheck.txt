@@ -234,3 +234,15 @@ C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\staticwebassets.build.
 C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\staticwebassets.build.json
 C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\staticwebassets.build.json
 C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\staticwebassets.build.json
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\staticwebassets.build.json
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\staticwebassets.build.json
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\staticwebassets.build.json
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\staticwebassets.build.json
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\staticwebassets.build.json
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\staticwebassets.build.json
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\staticwebassets.build.json
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\staticwebassets.build.json
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\staticwebassets.build.json
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\staticwebassets.build.json
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\staticwebassets.build.json
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\staticwebassets.build.json

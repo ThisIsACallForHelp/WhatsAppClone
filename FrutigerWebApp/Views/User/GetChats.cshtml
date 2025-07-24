@@ -57,16 +57,19 @@
         <div class="Convo">
             @foreach (Message message in Model.Messages)
             {
+                <div class="SenderMessage">
+                    <p style="margin: 0px;">@message.SenderID</p>
+                </div>
                 if (message.SenderID.Equals(ID))
                 {
                     <div class="SenderMessage">
-                        <p style="margin: 0px;">In Case No One Told You This Today...</p>
+                        <p style="margin: 0px;">@message.CipherTextBase64</p>
                     </div>
                 }
                 else
                 {
                     <div class="RecieverMessage">
-                        <p>Look At The Chats</p>
+                        <p>@message.CipherTextBase64</p>
                     </div>
                 }
             }

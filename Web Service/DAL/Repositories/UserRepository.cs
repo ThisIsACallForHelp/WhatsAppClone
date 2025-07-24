@@ -11,14 +11,20 @@ namespace Web_Service
         }
         public bool Create(User user)
         {
-            string sql = $@"INSERT INTO User(UserID, PhoneNumber, FirstName, LastName, Email, Password, Avatar)
-                                        VALUES(@UserID,@PhoneNumber,@FirstName,@LastName,@Email,@Password, @Avatar)";
+            DHEncryption dh = new DHEncryption();
+            user.RecipientPublicKeyBase64 = Convert.ToBase64String(dh.PublicKey);
+            user.RecipientSigningKeyBase64 = Convert.ToBase64String(dh.PublicSigningKey);
+            string sql = $@"INSERT INTO FrutigerUser([UserID], [PhoneNumber], [FirstName], [LastName], [Email], [Password], [Avatar], [RecipientPublicKeyBase64], [RecipientSigningKeyBase64])
+                VALUES(@UserID, @PhoneNumber, @FirstName, @LastName, @Email, @Password, @Avatar, @RecipientPublicKeyBase64, @RecipientSigningKeyBase64)";
             base.dbContext.AddParameters("@UserID", user.ID);
-            base.dbContext.AddParameters("@FirstName", user.FirstName);
             base.dbContext.AddParameters("@PhoneNumber", user.PhoneNumber);
+            base.dbContext.AddParameters("@FirstName", user.FirstName);
             base.dbContext.AddParameters("@LastName", user.LastName);
             base.dbContext.AddParameters("@Email", user.Email);
             base.dbContext.AddParameters("@Password", user.Password);
+            base.dbContext.AddParameters("@Avatar", user.Avatar);
+            base.dbContext.AddParameters("@RecipientPublicKeyBase64", user.RecipientPublicKeyBase64);
+            base.dbContext.AddParameters("@RecipientSigningKeyBase64", user.RecipientSigningKeyBase64);
             return base.dbContext.Create(sql) > 0;
         }
         public bool Update(User user)
@@ -55,7 +61,7 @@ namespace Web_Service
 
         public User GetByID(string ID)
         {
-            string sql = $@"SELECT * FROM [User] WHERE UserID = @ID";
+            string sql = $@"SELECT * FROM FrutigerUser WHERE [UserID] = @ID";
             base.dbContext.AddParameters("@ID", ID);
             Console.WriteLine("query -> " + sql);
             using (IDataReader reader = base.dbContext.Read(sql))
@@ -78,13 +84,13 @@ namespace Web_Service
             }
         }
 
-        public int Register(User user)
+        public string Register(User user)
         {
             if (Create(user))
             {
-                return Convert.ToInt32(base.dbContext.GetLastInsertedID());
+                return base.dbContext.GetLastInsertedID();
             }
-            return 0;
+            return "NULL";
         }
     }
 }
