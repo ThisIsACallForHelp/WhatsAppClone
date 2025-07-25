@@ -32,6 +32,37 @@
   },
   {
     "ContainingType": "Web_Service.UserController",
+    "Method": "Decrypt",
+    "RelativePath": "api/User/Decrypt",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "MessageID",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserID",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Web_Service.UserController",
     "Method": "DeleteChat",
     "RelativePath": "api/User/DeleteChat",
     "HttpMethod": "POST",
@@ -232,7 +263,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.String",
+        "Type": "System.Boolean",
         "MediaTypes": [
           "text/plain",
           "application/json",

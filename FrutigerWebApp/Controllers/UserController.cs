@@ -82,6 +82,7 @@ namespace FrutigerWebApp
         [HttpPost]
         public async Task<IActionResult> SendMessage(string Text, string SenderID)
         {
+            //ts should work 
             Client<Data.Message> client = new Client<Data.Message>()
             {
                 Host = "localhost",
@@ -130,10 +131,71 @@ namespace FrutigerWebApp
             Console.WriteLine($"HmacBase64.Length -> {message.HmacBase64.Length}");
             if(await client.PostAsync(message))
             {
-
+                message.CipherTextBase64 = DHEncryption.DecryptMessage(CipherText, PublicKey, iv, hmac);
+                return View(message);
             }
-            
+            return null;
         }
+
+        //i will save the first code sample if anything happens
+        //[HttpPost]
+        //public async Task<IActionResult> SendMessage(string Text, string SenderID)
+        //{
+        //    Client<Data.Message> client = new Client<Data.Message>()
+        //    {
+        //        Host = "localhost",
+        //        Port = 7189,
+        //        Schema = "https",
+        //        Path = "api/User/SendMessage"
+        //    };
+        //    DHEncryption dh = new DHEncryption();
+        //    ECDsaCng dsa = new ECDsaCng(CngKey.Create(CngAlgorithm.ECDsaP256));
+        //    dsa.HashAlgorithm = CngAlgorithm.Sha256;
+        //    User user = GetUser(SenderID);
+        //    byte[] SingningPublicKey = dsa.Key.Export(CngKeyBlobFormat.EccPublicBlob);
+        //    byte[] PublicKey = DHEncryption.DeriveSharedKey(Convert.FromBase64String(user.RecipientPublicKeyBase64));
+        //    byte[] SenderSigningPublicKey = Convert.FromBase64String(user.RecipientSigningKeyBase64);
+        //    byte[] hmac, iv;
+        //    //encrypted text
+        //    byte[] CipherText = DHEncryption.EncryptMessage(Text, PublicKey, out iv, out hmac);
+        //    //Sign the data 
+        //    byte[] Signature = dsa.SignData(CipherText);
+        //    using (ECDsaCng verifier = new ECDsaCng(CngKey.Import(SingningPublicKey, CngKeyBlobFormat.EccPublicBlob)))
+        //    {
+        //        verifier.HashAlgorithm = CngAlgorithm.Sha256;
+        //        bool valid = verifier.VerifyData(CipherText, Signature);
+        //        Console.WriteLine("Signature valid? " + valid);
+        //    }
+        //    //gjifodsa
+        //    Data.Message message = new Data.Message
+        //    {
+        //        SenderID = SenderID,
+        //        CipherTextBase64 = Convert.ToBase64String(CipherText),
+        //        SenderPublicKeyBase64 = Convert.ToBase64String(PublicKey),
+        //        SenderSigningKeyBase64 = Convert.ToBase64String(SenderSigningPublicKey),
+        //        SignatureBase64 = Convert.ToBase64String(Signature),
+        //        IVBase64 = Convert.ToBase64String(iv),
+        //        HmacBase64 = Convert.ToBase64String(hmac),
+        //        Attachments = "TEST",
+        //        SentAt = DateTime.Now,
+        //        ChatID = "TEST",
+        //        ID = Guid.NewGuid().ToString()
+        //    };
+        //    Console.WriteLine($"SignatureBase64.Length -> {message.SignatureBase64.Length}");
+        //    Console.WriteLine($"IVBase64.Length -> {message.IVBase64.Length}");
+        //    Console.WriteLine($"SenderPublicKeyBase64.Length -> {message.SenderPublicKeyBase64.Length}");
+        //    Console.WriteLine($" SenderSigningKeyBase64.Length -> {message.SenderSigningKeyBase64.Length}");
+        //    Console.WriteLine($"CipherTextBase64.Length -> {message.CipherTextBase64.Length}");
+        //    Console.WriteLine($"HmacBase64.Length -> {message.HmacBase64.Length}");
+        //    if (await client.PostAsync(message))
+        //    {
+
+        //    }
+
+        //}
+
+
+
 
         [HttpGet]
         public async Task<IActionResult> SignInViaQR()
