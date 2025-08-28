@@ -76,7 +76,7 @@ namespace Web_Service
         {
             string sql = $@"SELECT * FROM Chat 
                                                WHERE Chat.ChatName LIKE @ChatName 
-                                               AND (Chat.FirstUserID = @UserID OR Chat.SecondUserID != @UserID)";
+                                               AND (Chat.FirstUserID = @UserID OR Chat.SecondUserID = @UserID)";
             base.dbContext.AddParameters("@ChatName", '%' + ChatName + '%');
             base.dbContext.AddParameters("@UserID", UserID);
             Console.WriteLine(sql);

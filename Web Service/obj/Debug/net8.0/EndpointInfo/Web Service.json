@@ -58,7 +58,7 @@
         }
       }
     },
-    "/api/User/SearchBarResult/Search": {
+    "/api/User/SearchBarResult": {
       "get": {
         "tags": [
           "User"
@@ -103,7 +103,7 @@
         }
       }
     },
-    "/api/User/GetDetails/Profile_Info": {
+    "/api/User/GetDetails": {
       "get": {
         "tags": [
           "User"
@@ -141,7 +141,7 @@
         }
       }
     },
-    "/api/User/Register/Register": {
+    "/api/User/Register": {
       "post": {
         "tags": [
           "User"
@@ -349,86 +349,42 @@
         "tags": [
           "User"
         ],
-        "parameters": [
-          {
-            "name": "Text",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "SenderID",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "default": "gjifodsa"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "boolean"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "boolean"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "boolean"
-                }
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Message"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Message"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Message"
               }
             }
           }
-        }
-      }
-    },
-    "/api/User/Decrypt": {
-      "get": {
-        "tags": [
-          "User"
-        ],
-        "parameters": [
-          {
-            "name": "MessageID",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "UserID",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "default": "gjifodsa"
-            }
-          }
-        ],
+        },
         "responses": {
           "200": {
             "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "string"
+                  "type": "boolean"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "string"
+                  "type": "boolean"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "string"
+                  "type": "boolean"
                 }
               }
             }

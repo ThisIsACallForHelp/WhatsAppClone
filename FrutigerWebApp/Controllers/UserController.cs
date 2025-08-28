@@ -18,7 +18,7 @@ namespace FrutigerWebApp
             return View();
         }
         [HttpGet]
-        public async Task<IActionResult> GetChats(string UserID = "Nmx", string? ChatID = "FR", bool IsGroup = false)
+        public async Task<IActionResult> GetChats(string? ChatID, string UserID = "gjifodsa", bool IsGroup = false)
         {
             Client<MainPage> Client = new Client<MainPage>()
             {
@@ -27,10 +27,42 @@ namespace FrutigerWebApp
                 Port = 7189,
                 Schema = "https"
             };
+            UData.ChatID = ChatID;
+            Console.WriteLine("chat id -> " + ChatID);
             Client.AddParams("UserID", UserID);
             Client.AddParams("ChatID", ChatID);
             Client.AddParams("IsGroup", IsGroup.ToString());
-            return View(await Client.GetAsync());
+            Console.WriteLine("chat id -> " + UData.ChatID);
+            MainPage Main = await Client.GetAsync();
+            if (Main.Messages != null && Main.Messages.Count > 0)
+            {
+                List<Data.Message> Decrypted = new List<Data.Message>();
+                foreach (Data.Message message in Main.Messages)
+                {
+                    byte[] PublicKey = Convert.FromBase64String(message.SenderPublicKeyBase64);
+                    byte[] hmac = Convert.FromBase64String(message.HmacBase64);
+                    byte[] iv = Convert.FromBase64String(message.IVBase64);
+                    byte[] CipherText = Convert.FromBase64String(message.CipherTextBase64);
+                    message.CipherTextBase64 = DHEncryption.DecryptMessage(CipherText, PublicKey, iv, hmac);
+                    Decrypted.Add(message);
+                }
+                Main.Messages = Decrypted;
+            }
+            if (Main.Convo != null && Main.Convo.Count > 0)
+            {
+                List<Data.Message> Decrypted = new List<Data.Message>();
+                foreach (Data.Message message in Main.Convo)
+                {
+                    byte[] PublicKey = Convert.FromBase64String(message.SenderPublicKeyBase64);
+                    byte[] hmac = Convert.FromBase64String(message.HmacBase64);
+                    byte[] iv = Convert.FromBase64String(message.IVBase64);
+                    byte[] CipherText = Convert.FromBase64String(message.CipherTextBase64);
+                    message.CipherTextBase64 = DHEncryption.DecryptMessage(CipherText, PublicKey, iv, hmac);
+                    Decrypted.Add(message);
+                }
+                Main.Convo = Decrypted;
+            }
+            return View(Main);
         }
 
         [HttpGet]
@@ -74,13 +106,13 @@ namespace FrutigerWebApp
                 Host = "localhost",
                 Port = 7189,
                 Schema = "https",
-                Path = "api/User/GetUser"
+                Path = "api/User/GetDetails"
             };
-            client.AddParams("UserID", ID);
+            client.AddParams("ID", ID);
             return client.GetAsync().Result;
         }
         [HttpPost]
-        public async Task<IActionResult> SendMessage(string Text, string SenderID)
+        public async Task<IActionResult> SendMessage(string Text, string SenderID = "gjifodsa")
         {
             //ts should work 
             Client<Data.Message> client = new Client<Data.Message>()
@@ -120,7 +152,7 @@ namespace FrutigerWebApp
                 HmacBase64 = Convert.ToBase64String(hmac),
                 Attachments = "TEST",
                 SentAt = DateTime.Now,
-                ChatID = "TEST",
+                ChatID = UData.ChatID,
                 ID = Guid.NewGuid().ToString()
             };
             Console.WriteLine($"SignatureBase64.Length -> {message.SignatureBase64.Length}");
@@ -132,7 +164,7 @@ namespace FrutigerWebApp
             if(await client.PostAsync(message))
             {
                 message.CipherTextBase64 = DHEncryption.DecryptMessage(CipherText, PublicKey, iv, hmac);
-                return View(message);
+                return RedirectToAction("GetChats", "User", new { ChatID = UData.ChatID, UserID = user.ID});
             }
             return null;
         }

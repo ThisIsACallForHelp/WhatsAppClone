@@ -76,3 +76,4 @@ wwwroot\images\Screenshot 2025-07-03 235048.png
 wwwroot\images\Transparent_QR_Test.png
 wwwroot\images\WhatsApp Image 2025-07-02 at 22.38.38_fad21015.jpg
 wwwroot\images\wp2787640.jpg
+wwwroot\js\Messages.js

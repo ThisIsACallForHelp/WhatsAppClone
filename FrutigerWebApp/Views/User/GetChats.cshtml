@@ -4,7 +4,7 @@
     ViewData["Title"] = "GetChats";
     Layout = "~/Views/Shared/MasterPage.cshtml";
     int i =0;
-    string ID = "Nmx";
+    string ID = "gjifodsa";
 }
 
 <div class="ChatWrapper">
@@ -17,19 +17,21 @@
         </div>
         @foreach(Chat chat in Model.Chats)
         {
-            <div class="SingleChat">
+            <!-- UserID = "gjifodsa", string? ChatID = null , bool IsGroup = false-->
+            <div class="SingleChat" onclick="window.location.href='@Url.Action("GetChats", "User", new { UserID = "gjifodsa", ChatID = chat.ID, IsGroup = false })'">
                 <div class="ChatIMG">
-                    <img src="images/Screenshot 2025-06-24 225303.png" style="width: 55px; height: 55px; border-radius: 50%;">
+                    <img src="@chat.ChatIMG" style="width: 55px; height: 55px; border-radius: 50%;">
                 </div>
                 <div class="ChatInfo">
                     <div class="ChatName">
-                        <h1 style="font-size: 25px; margin-bottom: 5px;">Hello</h1>
+                        <h1 style="font-size: 25px; margin-bottom: 5px;">@chat.ChatName</h1>
                     </div>
                     <div class="LastMessage">
-                        <p>User: You Are Gay As Fuck</p>
+                        <p>@Model.Messages[i].CipherTextBase64</p>
                     </div>
                 </div>
             </div>
+            i++;
         }
         @foreach(GroupChat groupChat in Model.GroupChats)
         {
@@ -42,7 +44,7 @@
                         <h1 style="font-size: 25px; margin-bottom: 5px;">Hello</h1>
                     </div>
                     <div class="LastMessage">
-                        <p>@Model.User.FirstName: @Model.Messages[i]</p>
+                        <p>@Model.Messages[i].CipherTextBase64</p>
                     </div>
                 </div>
             </div>
@@ -52,14 +54,11 @@
     </div>
 </div>
     <div class="Messages">
-    @if(Model.Convo != null)
+    @if(Model.Convo.Count != 0)
     {
         <div class="Convo">
-            @foreach (Message message in Model.Messages)
+            @foreach (Message message in Model.Convo)
             {
-                <div class="SenderMessage">
-                    <p style="margin: 0px;">@message.SenderID</p>
-                </div>
                 if (message.SenderID.Equals(ID))
                 {
                     <div class="SenderMessage">
@@ -74,16 +73,19 @@
                 }
             }
         </div>
+        <form class="SendMessage" action="https://localhost:7159/User/SendMessage"
+            enctype="multipart/form-data" method="post">
+            <div class="MessageBar">
+                <button type="submit" style="visibility: hidden"></button>
+                <i class="ri-arrow-left-double-fill" style="width: 30px; height: 50px; font-size: 40px; margin-top: 5px; margin-left: 5px;" id="SendButton" onclick="this.previousElementSibling.click();"></i>
+                <input type="Text" name="Text" placeholder="Send A Message..." class="Request" style="width: 890px;height: 48px; border: none;">
+                <i class="ri-add-circle-line" style="width: 50px; height: 50px; font-size: 40px; margin-top: 5px;"></i>                
+                <i class="ri-mic-line" style="width: 50px; height: 50px; font-size: 40px; margin-top: 5px;"></i>
+            </div>
+
+        </form>
     }
     
-    <div class="SendMessage">
-        <div class="MessageBar">
-            <i class="ri-arrow-left-double-fill" style="width: 30px; height: 50px; font-size: 40px; margin-top: 5px; margin-left: 5px;"></i>
-            <input type="Text" placeholder="Send A Message..." class="Request" style="width: 890px;height: 48px; border: none;">
-            <i class="ri-add-circle-line" style="width: 50px; height: 50px; font-size: 40px; margin-top: 5px;"></i>
-            <i class="ri-mic-line" style="width: 50px; height: 50px; font-size: 40px; margin-top: 5px;"></i>
-        </div>
-
-    </div>
+    
 </div>
 

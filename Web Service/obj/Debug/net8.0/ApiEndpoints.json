@@ -32,37 +32,6 @@
   },
   {
     "ContainingType": "Web_Service.UserController",
-    "Method": "Decrypt",
-    "RelativePath": "api/User/Decrypt",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "MessageID",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "UserID",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.String",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Web_Service.UserController",
     "Method": "DeleteChat",
     "RelativePath": "api/User/DeleteChat",
     "HttpMethod": "POST",
@@ -116,7 +85,7 @@
   {
     "ContainingType": "Web_Service.UserController",
     "Method": "GetDetails",
-    "RelativePath": "api/User/GetDetails/Profile_Info",
+    "RelativePath": "api/User/GetDetails",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -188,7 +157,7 @@
   {
     "ContainingType": "Web_Service.UserController",
     "Method": "Register",
-    "RelativePath": "api/User/Register/Register",
+    "RelativePath": "api/User/Register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -214,7 +183,7 @@
   {
     "ContainingType": "Web_Service.UserController",
     "Method": "SearchBarResult",
-    "RelativePath": "api/User/SearchBarResult/Search",
+    "RelativePath": "api/User/SearchBarResult",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -251,14 +220,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Text",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "SenderID",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "msg",
+        "Type": "Data.Message",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [

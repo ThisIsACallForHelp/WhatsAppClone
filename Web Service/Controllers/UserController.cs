@@ -20,7 +20,7 @@ namespace Web_Service
     {
         DBContext dbContext;
         UOW UOW;
-
+        //USER FOR TESTING: gjifodsa
         public UserController()
         {
             this.dbContext = DBContext.GetInstance();
@@ -29,7 +29,7 @@ namespace Web_Service
 
         [HttpGet]
         //works
-        public MainPage GetMainPage(string userID , string ChatID, bool IsGroup = false)
+        public MainPage GetMainPage(string userID , string ChatID = null, bool IsGroup = false)
         {
             List<Message> Convo = new List<Message>();
             List<Message> LastMessages = new List<Message>();
@@ -70,13 +70,15 @@ namespace Web_Service
                 return null;
             }
             finally{
+                this.dbContext.ClearParameters();
                 this.dbContext.CloseConnection();   
             }
         }
-        //check that 
-        [HttpGet("Search")]
+        
+        [HttpGet]
         public Search SearchBarResult(string Request,string UserID)
         {
+            //works
             List<Chat> chats = new List<Chat>();
             List<GroupChat> groups = new List<GroupChat>();
             List<Message> LastMessages = new List<Message>();
@@ -106,14 +108,15 @@ namespace Web_Service
             }
             finally
             {
+                this.dbContext.ClearParameters();
                 this.dbContext.CloseConnection();
             }
         }
 
-        [HttpGet("Profile_Info")]
-        //no way this wont work
+        [HttpGet]
         public User GetDetails(string ID)
         {
+            //works
             try
             {
                 this.dbContext.OpenConnection();
@@ -126,13 +129,14 @@ namespace Web_Service
             }
             finally
             {
+                this.dbContext.ClearParameters();
                 this.dbContext.CloseConnection();
             }
         }
-        [HttpPost("Register")]
-        //should work 
+        [HttpPost]
         public string Register(User user)
         {
+            //works
             try
             {
                 this.dbContext.OpenConnection();
@@ -145,14 +149,16 @@ namespace Web_Service
             }
             finally
             {
+                this.dbContext.ClearParameters();
                 this.dbContext.CloseConnection(); 
             }
         }
 
         [HttpGet]
-        //check that
+        
         public MainPage GetArchivedChats(string UserID)
         {
+            //works
             List<Chat> chatList = new List<Chat>();
             List<GroupChat> groupChatList = new List<GroupChat>();
             List<Message> messageList = new List<Message>();
@@ -184,14 +190,16 @@ namespace Web_Service
             }
             finally 
             {
+                this.dbContext.ClearParameters();
                 this.dbContext.CloseConnection(); 
             }
         }
 
         [HttpPost]
-        //should work, check that 
+        
         public bool ArchiveChat(Chat chat, string UserID)
         {
+            //works
             try
             {
                 this.dbContext.OpenConnection();
@@ -203,13 +211,15 @@ namespace Web_Service
                 return false;
             }
             finally 
-            { 
+            {
+                this.dbContext.ClearParameters();
                 this.dbContext.CloseConnection(); 
             }
         }
         [HttpPost]
         public bool DeleteChat(Chat chat)
         {
+            //works
             try
             {
                 this.dbContext.OpenConnection();
@@ -222,6 +232,7 @@ namespace Web_Service
             }
             finally
             {
+                this.dbContext.ClearParameters();
                 this.dbContext.CloseConnection();
             }
         }
@@ -229,6 +240,7 @@ namespace Web_Service
         [HttpGet]
         public IActionResult GetQR()
         {
+            //works
             try
             {
                 this.dbContext.OpenConnection();
@@ -264,6 +276,7 @@ namespace Web_Service
             }
             finally
             {
+                this.dbContext.ClearParameters();
                 this.dbContext.CloseConnection();
             }
         }
@@ -272,6 +285,7 @@ namespace Web_Service
         [HttpPost]
         public bool SendMessage(Message msg)
         {
+            //works HERE
             try
             {                              
                 this.dbContext.OpenConnection();                
@@ -284,6 +298,7 @@ namespace Web_Service
             }
             finally
             {
+                this.dbContext.ClearParameters();
                 this.dbContext.CloseConnection();
             }
         }

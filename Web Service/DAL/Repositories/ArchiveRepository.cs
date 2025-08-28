@@ -12,7 +12,7 @@ namespace Web_Service
         {
             string sql = $@"INSERT INTO Archive(ArchiveID, UserID, ChatID)
                                         VALUES(@ArchiveID,@UserID,@ChatID)";
-            base.dbContext.AddParameters("@ArchiveID", archive.ID);
+            base.dbContext.AddParameters("@ArchiveID", Guid.NewGuid().ToString());
             base.dbContext.AddParameters("@UserID", archive.UserID);
             base.dbContext.AddParameters("@ChatID", archive.ChatID);
             return base.dbContext.Create(sql) > 0;

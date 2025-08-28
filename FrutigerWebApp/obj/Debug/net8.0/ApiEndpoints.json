@@ -85,7 +85,7 @@
   {
     "ContainingType": "Web_Service.UserController",
     "Method": "GetDetails",
-    "RelativePath": "api/User/GetDetails/Profile_Info",
+    "RelativePath": "api/User/GetDetails",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -157,7 +157,7 @@
   {
     "ContainingType": "Web_Service.UserController",
     "Method": "Register",
-    "RelativePath": "api/User/Register/Register",
+    "RelativePath": "api/User/Register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -170,7 +170,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Int32",
+        "Type": "System.String",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -183,7 +183,7 @@
   {
     "ContainingType": "Web_Service.UserController",
     "Method": "SearchBarResult",
-    "RelativePath": "api/User/SearchBarResult/Search",
+    "RelativePath": "api/User/SearchBarResult",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -220,7 +220,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "message",
+        "Name": "msg",
         "Type": "Data.Message",
         "IsRequired": true
       }

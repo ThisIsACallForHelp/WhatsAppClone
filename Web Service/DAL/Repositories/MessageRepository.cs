@@ -23,6 +23,7 @@ namespace Web_Service
 
         public bool Create(Message message)
         {
+            this.dbContext.ClearParameters();
             string sql = @$"INSERT INTO Message(MessageID, SenderID, SentAt, CipherTextBase64, Attachments, ChatID, IVBase64,
                                         HmacBase64, SignatureBase64, SenderPublicKeyBase64, SenderSigningKeyBase64)
                    VALUES(@MessageID, @SenderID, #{message.SentAt}#, @CipherTextBase64, @Attachments, 
@@ -96,7 +97,7 @@ namespace Web_Service
         public List<Message> Conversation(string ChatID)
         {
             List<Message> messages = new List<Message>();
-            string sql = $@"SELECT * FROM Message WHERE ChatID = '{ChatID}'";
+            string sql = $@"SELECT * FROM Message WHERE ChatID = '{ChatID}' ORDER BY SentAt ASC";
             //base.dbContext.AddParameters("@ChatID", ChatID);
             Console.WriteLine("sql -> " + sql);
             using (IDataReader reader = base.dbContext.Read(sql))
