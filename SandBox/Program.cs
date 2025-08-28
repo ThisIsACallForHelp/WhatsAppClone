@@ -28,7 +28,7 @@ namespace Sandbox
                 };
                 PublicKey = Dh.PublicKey.ToByteArray();
             }
-
+            //it works ig 
             public byte[] DeriveSharedKey(byte[] otherPartyPublicKey)
             {
                 var otherPubKey = ECDiffieHellmanCngPublicKey.FromByteArray(otherPartyPublicKey, CngKeyBlobFormat.EccPublicBlob);

@@ -10,6 +10,7 @@ namespace Data
     {
         public string? UserID { get; set; }
         public string? ChatID { get; set; }
+        //this is the new change 
         
     }
 }
