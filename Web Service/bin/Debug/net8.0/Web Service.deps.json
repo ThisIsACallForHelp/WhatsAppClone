@@ -9,7 +9,7 @@
       "Web Service/1.0.0": {
         "dependencies": {
           "Data": "1.0.0",
-          "QRCoder": "1.6.0",
+          "QRCoder": "1.7.0",
           "Swashbuckle.AspNetCore": "6.6.2",
           "System.Data.OleDb": "9.0.6",
           "System.Drawing.Common": "9.0.6",
@@ -53,11 +53,14 @@
           }
         }
       },
-      "QRCoder/1.6.0": {
+      "QRCoder/1.7.0": {
+        "dependencies": {
+          "System.Drawing.Common": "9.0.6"
+        },
         "runtime": {
           "lib/net6.0/QRCoder.dll": {
-            "assemblyVersion": "1.6.0.0",
-            "fileVersion": "1.6.0.0"
+            "assemblyVersion": "1.7.0.0",
+            "fileVersion": "1.7.0.0"
           }
         }
       },
@@ -293,12 +296,12 @@
       "path": "microsoft.win32.systemevents/9.0.6",
       "hashPath": "microsoft.win32.systemevents.9.0.6.nupkg.sha512"
     },
-    "QRCoder/1.6.0": {
+    "QRCoder/1.7.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-XmPA81eo+oRxBuyVdswsSkTGTE1d3thfF11Z1PdD7oB56A6HU4G4AAOdySmGRMb/cljwlFTMWUtosGEnwpS6GA==",
-      "path": "qrcoder/1.6.0",
-      "hashPath": "qrcoder.1.6.0.nupkg.sha512"
+      "sha512": "sha512-6R3hQkayihGIDjp3F1nLRDBWG+nqahGyOY2+fH4Rll16Vad67oaUUfHkOiMWKiJFnGh+PIGDfUos+0R9m54O1g==",
+      "path": "qrcoder/1.7.0",
+      "hashPath": "qrcoder.1.7.0.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/6.6.2": {
       "type": "package",

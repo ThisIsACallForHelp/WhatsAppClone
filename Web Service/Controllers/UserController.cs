@@ -134,18 +134,19 @@ namespace Web_Service
             }
         }
         [HttpPost]
-        public string Register(User user)
+        public User Register(User user)
         {
             //works
             try
             {
                 this.dbContext.OpenConnection();
+                user.ID = Guid.NewGuid().ToString();
                 return this.UOW.UserRepository.Register(user);
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                return "NULL";
+                return new Data.User();
             }
             finally
             {

@@ -140,5 +140,23 @@ namespace API
             }
             return false;
         }
+
+        public async Task<User> Register(T model)
+        {
+            this.request.Method = HttpMethod.Post;
+            this.request.RequestUri = this.uriBuilder.Uri;
+            ObjectContent<T> objectContent = new ObjectContent<T>(model, new JsonMediaTypeFormatter());
+            this.request.Content = objectContent;
+            using (HttpClient Client = new HttpClient())
+            {
+                this.response = await Client.SendAsync(this.request);
+                Console.WriteLine("Status Code: " + this.response.StatusCode);
+                if (this.response.IsSuccessStatusCode)
+                {
+                    return await this.response.Content.ReadAsAsync<User>();
+                }
+            }
+            return null;
+        }
     }
 }

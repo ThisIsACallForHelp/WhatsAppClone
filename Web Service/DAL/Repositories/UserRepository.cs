@@ -84,13 +84,13 @@ namespace Web_Service
             }
         }
 
-        public string Register(User user)
+        public User Register(User user)
         {
             if (Create(user))
             {
-                return base.dbContext.GetLastInsertedID();
+                return user;
             }
-            return "NULL";
+            return new User();
         }
     }
 }

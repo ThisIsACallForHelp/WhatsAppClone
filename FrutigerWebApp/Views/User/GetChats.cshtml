@@ -73,8 +73,9 @@
                 }
             }
         </div>
-        <form class="SendMessage" action="https://localhost:7159/User/SendMessage"
+        <form class="SendMessage" action="https://localhost:7159/User/SendMessage"            
             enctype="multipart/form-data" method="post">
+            @Html.AntiForgeryToken
             <div class="MessageBar">
                 <button type="submit" style="visibility: hidden"></button>
                 <i class="ri-arrow-left-double-fill" style="width: 30px; height: 50px; font-size: 40px; margin-top: 5px; margin-left: 5px;" id="SendButton" onclick="this.previousElementSibling.click();"></i>

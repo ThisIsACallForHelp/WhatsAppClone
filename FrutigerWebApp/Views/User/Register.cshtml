@@ -1,5 +1,8 @@
-﻿
+﻿@using Microsoft.AspNetCore.DataProtection
+@inject IDataProtectionProvider DataProtectionProvider
+
 @{
+    
     ViewData["Title"] = "Register";
     Layout = null;
 }
@@ -14,7 +17,9 @@
 <body>
     <div class="wrapper">
         <h1 style="border-bottom: 5px solid black;"> Create Your Account</h1>
-        <form action="https://localhost:7159/User/RegisterUser" enctype="multipart/form-data">
+        <form action="https://localhost:7159/User/RegisterUser" enctype="multipart/form-data"
+            method="post">
+            @Html.AntiForgeryToken
             <h1 style="text-align: left; margin-left: 50px;"> Enter Your Name</h1>
             <div class="InfoGather">
                 <input type="text" placeholder="First Name ">

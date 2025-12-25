@@ -47,3 +47,7 @@ C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\QRCoder.dll
 C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\System.Drawing.Common.dll
 C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\System.Private.Windows.Core.dll
 C:\Trivia_Game\WhatsAppClone\Web Service\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Trivia_Game\WhatsAppClone\Web Service\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json

@@ -170,7 +170,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.String",
+        "Type": "Data.User",
         "MediaTypes": [
           "text/plain",
           "application/json",

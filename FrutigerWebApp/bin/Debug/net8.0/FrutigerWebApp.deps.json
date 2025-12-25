@@ -10,12 +10,49 @@
         "dependencies": {
           "API": "1.0.0",
           "Data": "1.0.0",
+          "HtmlSanitizer": "9.0.886",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.7",
-          "QRCoder": "1.6.0",
+          "NWebsec.AspNetCore.Middleware": "3.0.0",
+          "QRCoder": "1.7.0",
           "System.IO": "4.3.0"
         },
         "runtime": {
           "FrutigerWebApp.dll": {}
+        }
+      },
+      "AngleSharp/0.17.1": {
+        "dependencies": {
+          "System.Buffers": "4.5.1",
+          "System.Text.Encoding.CodePages": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AngleSharp.dll": {
+            "assemblyVersion": "0.17.1.0",
+            "fileVersion": "0.17.1.0"
+          }
+        }
+      },
+      "AngleSharp.Css/0.17.0": {
+        "dependencies": {
+          "AngleSharp": "0.17.1"
+        },
+        "runtime": {
+          "lib/net7.0/AngleSharp.Css.dll": {
+            "assemblyVersion": "0.17.0.0",
+            "fileVersion": "0.17.0.0"
+          }
+        }
+      },
+      "HtmlSanitizer/9.0.886": {
+        "dependencies": {
+          "AngleSharp": "0.17.1",
+          "AngleSharp.Css": "0.17.0"
+        },
+        "runtime": {
+          "lib/net8.0/HtmlSanitizer.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.886.0"
+          }
         }
       },
       "Humanizer/2.14.1": {
@@ -1347,11 +1384,33 @@
           }
         }
       },
-      "QRCoder/1.6.0": {
+      "NWebsec.AspNetCore.Core/3.0.0": {
+        "runtime": {
+          "lib/netcoreapp3.1/NWebsec.AspNetCore.Core.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
+        }
+      },
+      "NWebsec.AspNetCore.Middleware/3.0.0": {
+        "dependencies": {
+          "NWebsec.AspNetCore.Core": "3.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/NWebsec.AspNetCore.Middleware.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
+        }
+      },
+      "QRCoder/1.7.0": {
+        "dependencies": {
+          "System.Drawing.Common": "9.0.6"
+        },
         "runtime": {
           "lib/net6.0/QRCoder.dll": {
-            "assemblyVersion": "1.6.0.0",
-            "fileVersion": "1.6.0.0"
+            "assemblyVersion": "1.7.0.0",
+            "fileVersion": "1.7.0.0"
           }
         }
       },
@@ -1393,6 +1452,7 @@
           }
         }
       },
+      "System.Buffers/4.5.1": {},
       "System.CodeDom/5.0.0": {
         "runtime": {
           "lib/netstandard2.0/System.CodeDom.dll": {
@@ -1608,6 +1668,11 @@
           "System.Runtime": "4.3.0"
         }
       },
+      "System.Text.Encoding.CodePages/6.0.0": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        }
+      },
       "System.Text.Encodings.Web/7.0.0": {},
       "System.Text.Json/7.0.3": {
         "dependencies": {
@@ -1650,7 +1715,7 @@
       "Web Service/1.0.0": {
         "dependencies": {
           "Data": "1.0.0",
-          "QRCoder": "1.6.0",
+          "QRCoder": "1.7.0",
           "Swashbuckle.AspNetCore": "6.6.2",
           "System.Data.OleDb": "9.0.6",
           "System.Drawing.Common": "9.0.6",
@@ -1670,6 +1735,27 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AngleSharp/0.17.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5MPI4bbixlwxb0W/smOMeIR+QlxMy5/5jD+WnIAw4pBC+7AhLPe5bS3cLgQMJyvd6q0A48sG+uYOt/ep406GLA==",
+      "path": "anglesharp/0.17.1",
+      "hashPath": "anglesharp.0.17.1.nupkg.sha512"
+    },
+    "AngleSharp.Css/0.17.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bg0AcugmX6BFEi/DHG61QrwRU8iuiX4H8LZehdIzYdqOM/dgb3BsCTzNIcc1XADn4+xfQEdVwJYTSwUxroL4vg==",
+      "path": "anglesharp.css/0.17.0",
+      "hashPath": "anglesharp.css.0.17.0.nupkg.sha512"
+    },
+    "HtmlSanitizer/9.0.886": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qw87Q+bffcs2Fw/Rd3VXWg/QK+K9eIxeE9QidQLz3C/ffgUGuOB0X4MWUuuolUnnBvoD/u6FqXhsqIA67nL4kg==",
+      "path": "htmlsanitizer/9.0.886",
+      "hashPath": "htmlsanitizer.9.0.886.nupkg.sha512"
     },
     "Humanizer/2.14.1": {
       "type": "package",
@@ -2357,12 +2443,26 @@
       "path": "nuget.versioning/6.11.0",
       "hashPath": "nuget.versioning.6.11.0.nupkg.sha512"
     },
-    "QRCoder/1.6.0": {
+    "NWebsec.AspNetCore.Core/3.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-XmPA81eo+oRxBuyVdswsSkTGTE1d3thfF11Z1PdD7oB56A6HU4G4AAOdySmGRMb/cljwlFTMWUtosGEnwpS6GA==",
-      "path": "qrcoder/1.6.0",
-      "hashPath": "qrcoder.1.6.0.nupkg.sha512"
+      "sha512": "sha512-dvrs4Lvc7k98KKaMxKPHeOn0kONEIQpVrzweji9SLl9XEn1+XWVJe5f7mNvXoKPKjjcNuBIwVXr3K+g+DzZHEw==",
+      "path": "nwebsec.aspnetcore.core/3.0.0",
+      "hashPath": "nwebsec.aspnetcore.core.3.0.0.nupkg.sha512"
+    },
+    "NWebsec.AspNetCore.Middleware/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sQJUG6zk/96UaAcFaf3fQuzjAS9rsf2fXyks1YlG4E3QOWl0h6nIO9fMzfKoskRA+abs01rV+6Kc5P7xccXlzw==",
+      "path": "nwebsec.aspnetcore.middleware/3.0.0",
+      "hashPath": "nwebsec.aspnetcore.middleware.3.0.0.nupkg.sha512"
+    },
+    "QRCoder/1.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6R3hQkayihGIDjp3F1nLRDBWG+nqahGyOY2+fH4Rll16Vad67oaUUfHkOiMWKiJFnGh+PIGDfUos+0R9m54O1g==",
+      "path": "qrcoder/1.7.0",
+      "hashPath": "qrcoder.1.7.0.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/6.6.2": {
       "type": "package",
@@ -2391,6 +2491,13 @@
       "sha512": "sha512-mBBb+/8Hm2Q3Wygag+hu2jj69tZW5psuv0vMRXY07Wy+Rrj40vRP8ZTbKBhs91r45/HXT4aY4z0iSBYx1h6JvA==",
       "path": "swashbuckle.aspnetcore.swaggerui/6.6.2",
       "hashPath": "swashbuckle.aspnetcore.swaggerui.6.6.2.nupkg.sha512"
+    },
+    "System.Buffers/4.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Rw7ijyl1qqRS0YQD/WycNst8hUUMgrMH4FCn1nNm27M4VxchZ1js3fVjQaANHO5f3sN4isvP4a+Met9Y4YomAg==",
+      "path": "system.buffers/4.5.1",
+      "hashPath": "system.buffers.4.5.1.nupkg.sha512"
     },
     "System.CodeDom/5.0.0": {
       "type": "package",
@@ -2573,6 +2680,13 @@
       "sha512": "sha512-BiIg+KWaSDOITze6jGQynxg64naAPtqGHBwDrLaCtixsa5bKiR8dpPOHA7ge3C0JJQizJE+sfkz1wV+BAKAYZw==",
       "path": "system.text.encoding/4.3.0",
       "hashPath": "system.text.encoding.4.3.0.nupkg.sha512"
+    },
+    "System.Text.Encoding.CodePages/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZFCILZuOvtKPauZ/j/swhvw68ZRi9ATCfvGbk1QfydmcXBkIWecWKn/250UH7rahZ5OoDBaiAudJtPvLwzw85A==",
+      "path": "system.text.encoding.codepages/6.0.0",
+      "hashPath": "system.text.encoding.codepages.6.0.0.nupkg.sha512"
     },
     "System.Text.Encodings.Web/7.0.0": {
       "type": "package",

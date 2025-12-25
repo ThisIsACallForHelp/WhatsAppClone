@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="QRCoder" Version="1.6.0" />
+    <PackageReference Include="QRCoder" Version="1.7.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
     <PackageReference Include="System.Data.OleDb" Version="9.0.6" />
     <PackageReference Include="System.Drawing.Common" Version="9.0.6" />
@@ -18,9 +18,7 @@
   <ItemGroup>
     <Folder Include="AppKeys\" />
     <Folder Include="Encryption\E2EE\" />
-    <Folder Include="wwwroot\Attachments\" />
-    <Folder Include="wwwroot\Chats\" />
-    <Folder Include="wwwroot\Users\" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
