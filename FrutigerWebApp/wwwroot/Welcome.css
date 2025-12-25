@@ -198,3 +198,81 @@ html, body {
     font-weight: 400;
     font-style: normal;
 }
+
+/* Logo & buttons */
+.Logo {
+    margin-left: 50px;
+}
+
+.SignInBtn {
+    margin-left: 1250px;
+}
+
+.SignUpBtn {
+    width: 175px;
+}
+
+/* Intro container */
+.IntroContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    flex-direction: column;
+}
+
+.IntroTitle {
+    font-size: 60px;
+    margin: 0;
+}
+
+.SectionTitle {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 40px;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.SmallTitle {
+    font-size: 15px;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.SectionText {
+    margin: 5px 0 0 10px;
+    font-size: 20px;
+    text-align: left;
+}
+
+.IntroImage {
+    height: 602px;
+    width: 491px;
+    border-bottom-right-radius: 15px;
+    margin-top: 20px;
+    border-top: 5px solid black;
+}
+
+/* Theme selection */
+.ThemeOptions {
+    display: flex;
+}
+
+/* MiddleTitle */
+.MiddleTitle {
+    margin: 0;
+    margin-top: 30px;
+    font-size: 50px;
+    border-bottom: 5px solid black;
+    text-align: center;
+}
+
+.DownloadOurApp {
+    font-size: 30px;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}

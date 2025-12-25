@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Intro";
     Layout = null;
 }
@@ -15,50 +14,44 @@
 <body>
     <div class="Top-Layer">
         <div class="Top-Menu">
-            <img src="/images/Logo.png" style="margin-left: 50px;">
-            <button class="btn" style="margin-left:1250px ;" onclick="window.location.href='@Url.Action("SignInViaQR","User")'"> Sign In </button>
-            <button class="btn" style="width: 175px;" onclick="window.location.href='@Url.Action("Register", "User")'"> Sign Up </button>
-        </div>
-        <div style="display: flex; align-items: center; justify-content: center; margin-top: 50px; flex-direction: column;">
-                <div class="Intro">
-                    <h1 style="font-size: 60px; margin: 0px;"> Welcome To AquaLink!</h1>
-                    <div class="Description">
-                        <div class="WhoAreWe">
-                            <h1 style="margin-top: 0px; margin: 0px;"> Who Are We And What Is AquaLink?</h1>
-                            <h2 style="margin-top: 5px; margin-left: 10px; font-size: 20px; text-align: left;"> AquaLink Is A WEB/Desktop/Mobile Chatting Application Which Uses The Old Mid 2000's Styling - Frutiger Aero. Here At AquaLink, People Talk To Each Other, Connect With Each Other And Make New Friends.</h2>
-                            <h1 style="margin-top: 0px; margin: 0px;"> Can You Trust Us?</h1>
-                            <h2 style="margin-left: 10px; font-size: 20px; text-align: left;margin-top: 5px; margin: 0px;"> Of Course! Your Conversations, Messages And Secrets Are Safe With Us. Our System Secures And Protects Each One Of Your Messages With An End To End Encryption(E2EE) And Wont Let Third Parties Manipulate Or Read Them</h2>
-                            <h1 style="margin-top: 0px; margin: 0px; font-size: 25px;"> Download Our App On Your PC (Windows)</h1>
-                            <button class="Download"> Download </button>
-                        </div>
-                    <img src="/images/WhatsApp Image 2025-07-02 at 22.38.38_fad21015.jpg" style="height: 602px; width: 491px; border-bottom-right-radius: 15px; margin-top: 20px; border-top: 5px solid black;">
-                    </div>
-                </div>           
+            <img src="/images/Logo.png" class="Logo">
+            <button class="btn SignInBtn"> Sign In </button>
+            <button class="btn SignUpBtn"> Sign Up </button>
         </div>
 
-    </div>
-    <div class="MiddleLayer">
-        <div class="BGS">
-            <h1 style="margin: 0px; margin-top: 30px; font-size: 50px; border-bottom: 5px solid black;"> Don't Like Frutiger Aero? Choose Your Own Aesthetic!</h1>
-            <div style="display: flex;">
-                <div class="Dark-Aero">
-                </div>
-                <div class="Cyber-Glacier">
-                </div>
-                <div class="Metal-Heart">
-                </div>
-                <div class="Frutiger-Aurora">
-                </div>
-                <div class="Custom">
-                    <h1 style="margin-top: 200px;"> Or Make Your Own!</h1>
+        <div class="IntroContainer">
+            <div class="Intro">
+                <h1 class="IntroTitle"> Welcome To AquaLink!</h1>
+                <div class="Description">
+                    <div class="WhoAreWe">
+                        <h1 class="SectionTitle"> <strong>Who Are We And What Is AquaLink?</strong></h1>
+                        <h2 class="SectionText"> AquaLink Is A WEB/Desktop/Mobile Chatting Application Which Uses The Old Mid 2000's Styling - Frutiger Aero. Here At AquaLink, People Talk To Each Other, Connect With Each Other And Make New Friends.</h2>
+                        <h1 class="SectionTitle"> <strong>Can You Trust Us?</strong></h1>
+                        <h2 class="SectionText"> Of Course! Your Conversations, Messages And Secrets Are Safe With Us. Our System Secures And Protects Each One Of Your Messages With An End To End Encryption(E2EE) And Won't Let Third Parties Manipulate Or Read Them</h2>
+                        <h1 class="DownloadOurApp"> <strong>Download Our App (Windows)</strong></h1>
+                        <button class="Download"> <strong>Download</strong> </button>
+                    </div>
+                    <img src="/images/WhatsApp Image 2025-07-02 at 22.38.38_fad21015.jpg" class="IntroImage">
                 </div>
             </div>
         </div>
-
     </div>
 
+    <div class="MiddleLayer">
+        <div class="BGS">
+            <h1 class="MiddleTitle"> Don't Like Frutiger Aero? Choose Your Own Aesthetic!</h1>
+            <div class="ThemeOptions">
+                <div class="Dark-Aero"></div>
+                <div class="Cyber-Glacier"></div>
+                <div class="Metal-Heart"></div>
+                <div class="Frutiger-Aurora"></div>
+                <div class="Custom">
+                    <h1 class="CustomTitle"> Or Make Your Own!</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="@Url.Content("/Welcome.js")"></script>
 </body>
 </html>
-
-
-

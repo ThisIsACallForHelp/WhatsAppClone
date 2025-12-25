@@ -113,3 +113,77 @@ input[type = "file"]{
 .buttons{
     display: flex;
 }
+
+.MainTitle {
+    border-bottom: 5px solid black;
+}
+
+.SectionHeader {
+    text-align: left;
+    margin-left: 50px;
+}
+
+.LastName {
+    margin-left: 200px;
+}
+
+/* Phone number section */
+.PhoneSection {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    height: 130px;
+}
+
+.PhoneSection input {
+    margin-left: 325px;
+}
+
+/* Profile picture section */
+.ProfilePicSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 130px;
+    border-bottom: 5px solid black;
+}
+
+.ProfilePicSection label {
+    margin-bottom: 10px;
+}
+
+/* File picker styling */
+.FilePicker {
+    position: relative;
+    width: 300px;
+    height: 50px;
+}
+
+.FilePicker input[type="file"] {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.FakeFileButton {
+    border-radius: 20px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border: 2px solid white;
+    z-index: 1;
+}

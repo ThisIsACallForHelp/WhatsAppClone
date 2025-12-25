@@ -226,9 +226,9 @@ i{
     padding: 10px;
     min-height: 20px;
     max-height: 500px;
-    display: inline-block; /* Change from inline */
-    white-space: pre-wrap; /* Ensures line breaks for long text */
-    word-wrap: break-word; /* Ensures words break if too long */
+    display: inline-block; 
+    white-space: pre-wrap; 
+    word-wrap: break-word; 
 }
 
 .MessageBar{
@@ -241,4 +241,39 @@ i{
     justify-content: flex-start;
     border-radius: 20px;
 }
+
+.ChatImage {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+
+.ChatNameText {
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.HiddenSubmit {
+    visibility: hidden;
+}
+
+.SearchBar {
+    margin-bottom: 10px;
+}
+
+.Request {
+    width: 890px;
+    height: 48px;
+    border: none;
+}
+
+#SendButton {
+    width: 30px;
+    height: 50px;
+    font-size: 40px;
+    margin-top: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
 
