@@ -8,6 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="AppKeys\**" />
+    <Content Remove="AppKeys\**" />
+    <EmbeddedResource Remove="AppKeys\**" />
+    <None Remove="AppKeys\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Common" Version="10.0.2" />
     <PackageReference Include="QRCoder" Version="1.7.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
     <PackageReference Include="System.Data.OleDb" Version="9.0.6" />
@@ -16,7 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="AppKeys\" />
     <Folder Include="Encryption\E2EE\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>

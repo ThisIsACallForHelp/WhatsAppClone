@@ -1,6 +1,8 @@
+using FrutigerWebApp;
 using Ganss.Xss;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Builder.Extensions;
+using Microsoft.AspNetCore.SignalR;
 using NWebsec.AspNetCore.Middleware.Middleware;
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,8 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddSingleton<IHtmlSanitizer, HtmlSanitizer>();
+builder.Services.AddSignalR();
 var app = builder.Build();
-
+app.MapHub<ChatHub>("/GetChats");
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -26,9 +29,15 @@ app.UseCsp(csp =>
 {
     csp.DefaultSources(s => s.None());
     csp.ScriptSources(s => s.Self());
-    csp.StyleSources(s => s.Self());
+    csp.StyleSources(s => s.Self().CustomSources(
+        "https://fonts.googleapis.com",
+        "https://cdn.jsdelivr.net"
+        ));
     csp.ImageSources(s => s.Self().CustomSources("data:"));
-    csp.FontSources(s => s.Self());
+    csp.FontSources(s => s.Self().CustomSources(
+        "https://fonts.gstatic.com",
+        "https://cdn.jsdelivr.net"
+        ));
     csp.ConnectSources(s => s.Self());
     csp.FrameAncestors(s => s.None());
     csp.ObjectSources(s => s.None());

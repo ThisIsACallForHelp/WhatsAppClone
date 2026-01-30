@@ -21,7 +21,7 @@
         <form action="https://localhost:7159/User/RegisterUser"
               enctype="multipart/form-data"
               method="post">
-            @Html.AntiForgeryToken
+            @Html.AntiForgeryToken()
 
             <h1 class="SectionHeader">Enter Your Name</h1>
 
@@ -60,12 +60,12 @@
             </div>
 
             <div class="buttons">
-                <button type="button" class="btn BackBtn">Back To The Main Page</button>
+                <button id="BackBtnReg" type="button" class="btn BackBtn">Back To The Main Page</button>
                 <button type="submit" class="Submit">Submit</button>
             </div>
         </form>
     </div>
 
-    <script src="~/Register.js"></script>
+    <script src="~/js/Reg5.js"></script>
 </body>
 </html>

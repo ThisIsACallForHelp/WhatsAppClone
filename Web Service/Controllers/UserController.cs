@@ -250,12 +250,12 @@ namespace Web_Service
                     ID = QRCode_Creator.GetToken(),
                     CreatedAt = DateTime.Now,
                     ExpiresAt = DateTime.UtcNow.AddMinutes(1),
-                    UserID = "NONE"
+                    UserID = "SomeID" //you dont need the user id 
                 };
-                if (!this.UOW.TokenRepository.Create(token))
-                {
-                    return null;
-                }
+                //if (!this.UOW.TokenRepository.Create(token))
+                //{
+                //    return null;
+                //}
                 byte[] qrBytes = QRCode_Creator.Create(token.ID);
                 Bitmap bitmap;
                 using (MemoryStream MStream = new MemoryStream(qrBytes))

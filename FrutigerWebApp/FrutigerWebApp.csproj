@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="HtmlSanitizer" Version="9.0.886" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Common" Version="10.0.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
     <PackageReference Include="NWebsec.AspNetCore.Middleware" Version="3.0.0" />
     <PackageReference Include="QRCoder" Version="1.7.0" />

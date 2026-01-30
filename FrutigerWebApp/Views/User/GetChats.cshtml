@@ -76,7 +76,7 @@
         </div>
 
         <form class="SendMessage" action="https://localhost:7159/User/SendMessage" enctype="multipart/form-data" method="post">
-            @Html.AntiForgeryToken
+            @Html.AntiForgeryToken()
             <div class="MessageBar">
                 <button type="submit" class="HiddenSubmit"></button>
                 <i class="ri-arrow-left-double-fill" id="SendButton"></i>
@@ -87,3 +87,5 @@
         </form>
     }
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+<script src="~/js/Messages.js"></script>
