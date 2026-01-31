@@ -61,7 +61,7 @@ wwwroot\images\FrutigerGlacier.png
 wwwroot\images\Dark_Aero_3.png
 wwwroot\images\6b99db31aafa2bfa1442cecf8da2bdfb.jpeg
 wwwroot\SignUp.css
-wwwroot\SignIn.css
+wwwroot\SignIn1.css
 wwwroot\Main.css
 wwwroot\lib\jquery\LICENSE.txt
 wwwroot\lib\jquery\dist\jquery.js

@@ -58,6 +58,32 @@
   },
   {
     "ContainingType": "Web_Service.UserController",
+    "Method": "DeleteToken",
+    "RelativePath": "api/User/DeleteToken",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "Data.Token",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Web_Service.UserController",
     "Method": "GetArchivedChats",
     "RelativePath": "api/User/GetArchivedChats",
     "HttpMethod": "GET",
@@ -153,6 +179,32 @@
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Web_Service.UserController",
+    "Method": "GetToken",
+    "RelativePath": "api/User/GetToken",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TokenStr",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Data.Token",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Web_Service.UserController",

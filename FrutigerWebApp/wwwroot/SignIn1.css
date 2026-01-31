@@ -132,6 +132,7 @@ body{
     border: 5px solid black;
     background-image: url(/images/pngtree-blue-gradient-purifier-poster-background-template-image_140364.jpg);
     background-size: cover;
+    height: 500px;
 }
 
 .circle {

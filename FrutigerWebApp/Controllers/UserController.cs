@@ -1,13 +1,16 @@
 ﻿using API;
 using Data;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http;
+using Ganss.Xss;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.DataProtection;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.FlowAnalysis.DataFlow.CopyAnalysis;
+using NuGet.Common;
 using NuGet.Protocol.Plugins;
 using System.IO;
 using System.Net;
-using Ganss.Xss;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
 using Web_Service;
@@ -29,6 +32,49 @@ namespace FrutigerWebApp
         {
             return View();
         }
+        [HttpGet]
+        public async Task<IActionResult> VerifyQR(string Token)
+        {
+            Client<Data.Token> Client = new Client<Data.Token>()
+            {
+                Path = "api/User/GetToken",
+                Host = "localhost",
+                Port = 7189,
+                Schema = "https"
+            };
+            Client<Data.Token> DeleteToken = new Client<Data.Token>()
+            {
+                Path = "api/User/DeleteToken",
+                Host = "localhost",
+                Port = 7189,
+                Schema = "https"
+            };
+            Client<User> LoggedUser = new Client<User>()
+            {
+                Host = "localhost",
+                Port = 7189,
+                Schema = "https",
+                Path = "api/User/GetDetails"
+            };
+
+            Data.Token token = await Client.GetAsync();
+            token.AuthUserID = "gjifodsa";
+            HttpContext.Session.SetString("UserID", "gjifodsa");
+            if(token == null)
+            {
+                await DeleteToken.PostAsync(token);
+                return BadRequest();
+            }
+            if (token.ExpiresAt < DateTime.UtcNow)
+            {
+                await DeleteToken.PostAsync(token);
+                return Unauthorized("Expired");
+            }
+            //User user = await LoggedUser.Register(token);
+            await DeleteToken.PostAsync(token);
+            return Ok("Server received the token");
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> GetChats(string? ChatID, string UserID = "gjifodsa", bool IsGroup = false)

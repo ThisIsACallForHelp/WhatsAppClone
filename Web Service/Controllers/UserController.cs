@@ -29,7 +29,7 @@ namespace Web_Service
 
         [HttpGet]
         //works
-        public MainPage GetMainPage(string userID , string ChatID = null, bool IsGroup = false)
+        public MainPage GetMainPage(string userID, string ChatID = null, bool IsGroup = false)
         {
             List<Message> Convo = new List<Message>();
             List<Message> LastMessages = new List<Message>();
@@ -43,13 +43,13 @@ namespace Web_Service
                 chats = this.UOW.ChatRepository.GetChatsByUser(userID);
                 if (ChatID != null && !IsGroup)
                 {
-                    Convo = this.UOW.MessageRepository.Conversation(ChatID); 
+                    Convo = this.UOW.MessageRepository.Conversation(ChatID);
                 }
                 else if (ChatID != null && IsGroup)
                 {
                     Convo = this.UOW.MessageRepository.GroupConversation(ChatID);
                 }
-                foreach(var chat in chats)
+                foreach (var chat in chats)
                 {
                     LastMessages.Add(this.UOW.MessageRepository.GetLastMessages(userID, chat.ID));
                 }
@@ -64,19 +64,20 @@ namespace Web_Service
                 mainPage.Convo = Convo;
                 return mainPage;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
                 return null;
             }
-            finally{
+            finally
+            {
                 this.dbContext.ClearParameters();
-                this.dbContext.CloseConnection();   
+                this.dbContext.CloseConnection();
             }
         }
-        
+
         [HttpGet]
-        public Search SearchBarResult(string Request,string UserID)
+        public Search SearchBarResult(string Request, string UserID)
         {
             //works
             List<Chat> chats = new List<Chat>();
@@ -95,9 +96,10 @@ namespace Web_Service
                 {
                     LastMessages.Add(this.UOW.MessageRepository.GetLastGroupMessages(UserID, Group.ID));
                 }
-                return new Search {
+                return new Search
+                {
                     LatestMessages = LastMessages,
-                    GroupChats = groups, 
+                    GroupChats = groups,
                     Chats = chats
                 };
             }
@@ -151,12 +153,12 @@ namespace Web_Service
             finally
             {
                 this.dbContext.ClearParameters();
-                this.dbContext.CloseConnection(); 
+                this.dbContext.CloseConnection();
             }
         }
 
         [HttpGet]
-        
+
         public MainPage GetArchivedChats(string UserID)
         {
             //works
@@ -167,17 +169,17 @@ namespace Web_Service
             {
                 this.dbContext.OpenConnection();
                 chatList = this.UOW.ChatRepository.GetArchived(UserID);
-                groupChatList = this.UOW.GroupChatRepository.GetArchived(UserID);               
+                groupChatList = this.UOW.GroupChatRepository.GetArchived(UserID);
                 foreach (Chat chat in chatList)
                 {
                     messageList.Add(this.UOW.MessageRepository.GetLastMessages(UserID, chat.ID));
                 }
-                foreach(GroupChat chat in groupChatList)
+                foreach (GroupChat chat in groupChatList)
                 {
                     messageList.Add(this.UOW.MessageRepository.GetLastGroupMessages(UserID, chat.ID));
                 }
                 return new MainPage()
-                { 
+                {
                     Chats = chatList,
                     GroupChats = groupChatList,
                     Messages = messageList
@@ -189,32 +191,32 @@ namespace Web_Service
                 Console.WriteLine(ex.ToString());
                 return null;
             }
-            finally 
+            finally
             {
                 this.dbContext.ClearParameters();
-                this.dbContext.CloseConnection(); 
+                this.dbContext.CloseConnection();
             }
         }
 
         [HttpPost]
-        
+
         public bool ArchiveChat(Chat chat, string UserID)
         {
             //works
             try
             {
                 this.dbContext.OpenConnection();
-                return this.UOW.ArchiveRepository.Create(new Archive(){ ChatID = chat.ID, UserID = UserID });
+                return this.UOW.ArchiveRepository.Create(new Archive() { ChatID = chat.ID, UserID = UserID });
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
                 return false;
             }
-            finally 
+            finally
             {
                 this.dbContext.ClearParameters();
-                this.dbContext.CloseConnection(); 
+                this.dbContext.CloseConnection();
             }
         }
         [HttpPost]
@@ -247,16 +249,20 @@ namespace Web_Service
                 this.dbContext.OpenConnection();
                 Token token = new Token()
                 {
-                    ID = QRCode_Creator.GetToken(),
+                    TokenStr = QRCode_Creator.GetToken(),
                     CreatedAt = DateTime.Now,
                     ExpiresAt = DateTime.UtcNow.AddMinutes(1),
-                    UserID = "SomeID" //you dont need the user id 
+                    AuthUserID = "gjifodsa",
+                    HasBeenUsed = false,
+                    RedirectURL = "https://diffractive-garret-supereducated.ngrok-free.dev/User/VerifyQR?Token=",
+                    BrowserConnectID = "BrowserID"
                 };
-                //if (!this.UOW.TokenRepository.Create(token))
-                //{
-                //    return null;
-                //}
-                byte[] qrBytes = QRCode_Creator.Create(token.ID);
+                token.RedirectURL += token.TokenStr;
+                if (!this.UOW.TokenRepository.Create(token))
+                {
+                    return BadRequest();
+                }
+                byte[] qrBytes = QRCode_Creator.Create(token.RedirectURL);
                 Bitmap bitmap;
                 using (MemoryStream MStream = new MemoryStream(qrBytes))
                 {
@@ -270,7 +276,7 @@ namespace Web_Service
                     return File(stream.ToArray(), "image/png");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
                 return null;
@@ -288,9 +294,50 @@ namespace Web_Service
         {
             //works HERE
             try
-            {                              
-                this.dbContext.OpenConnection();                
+            {
+                this.dbContext.OpenConnection();
                 return this.UOW.MessageRepository.Create(msg);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+            finally
+            {
+                this.dbContext.ClearParameters();
+                this.dbContext.CloseConnection();
+            }
+        }
+
+        [HttpGet]
+
+        public Token GetToken(string TokenStr)
+        {
+            try
+            {
+                this.dbContext.OpenConnection();
+                return this.UOW.TokenRepository.GetByID(TokenStr);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+            finally
+            {
+                this.dbContext.ClearParameters();
+                this.dbContext.CloseConnection();
+            }
+        }
+
+        [HttpPost]
+        public bool DeleteToken(Token token)
+        {
+            try
+            {
+                this.dbContext.OpenConnection();
+                return this.UOW.TokenRepository.DeleteByID(token.TokenStr);
             }
             catch (Exception ex)
             {

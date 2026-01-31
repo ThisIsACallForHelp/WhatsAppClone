@@ -141,7 +141,7 @@ namespace API
             return false;
         }
 
-        public async Task<User> Register(T model)
+        public async Task<User> Register(T model = default(T))
         {
             this.request.Method = HttpMethod.Post;
             this.request.RequestUri = this.uriBuilder.Uri;

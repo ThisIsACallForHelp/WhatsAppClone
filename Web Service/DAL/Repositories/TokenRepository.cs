@@ -10,36 +10,39 @@ namespace Web_Service
         }
         public bool Create(Token token)
         {
-            string sql = $@"INSERT INTO Token(TokenID, [UserID], CreatedAt, ExpiresAt)
-                                        VALUES(@TokenID,[@UserID], @CreatedAt, @ExpiresAt)";
-            base.dbContext.AddParameters("@TokenID", token.ID);
-            base.dbContext.AddParameters("@UserID", token.UserID);
+            string sql = $@"INSERT INTO Token(TokenStr, UserID, CreatedAt, ExpiresAt, BrowserConnectID)
+                                        VALUES(@TokenStr,@AuthUserID, @CreatedAt, @ExpiresAt, @BrowserConnectID)";
+            base.dbContext.AddParameters("@TokenStr", token.TokenStr);
+            base.dbContext.AddParameters("@UserID", token.AuthUserID);
             base.dbContext.AddParameters("@CreatedAt", token.CreatedAt.ToString());
             base.dbContext.AddParameters("@ExpiresAt", token.ExpiresAt.ToString());
+            base.dbContext.AddParameters("@BrowserConnectID", token.BrowserConnectID);
             return base.dbContext.Create(sql) > 0;
         }
         public bool Update(Token token)
         {
-            string sql = $@"UPDATE Token SET UserID = @UserID, 
-                                             CreatedAt = CreatedAt,
-                                             ExpiresAt = ExpiresAt
-                                         WHERE TokenID = @TokenID";
-            base.dbContext.AddParameters("@UserID", token.UserID);
+            string sql = $@"UPDATE Token SET UserID = @AuthUserID, 
+                                             CreatedAt = @CreatedAt,
+                                             ExpiresAt = @ExpiresAt,
+                                             BrowserConnectID = @BrowserConnectID
+                                         WHERE TokenStr = @TokenStr";
+            base.dbContext.AddParameters("@UserID", token.AuthUserID);
             base.dbContext.AddParameters("@CreatedAt", token.CreatedAt.ToString());
             base.dbContext.AddParameters("@ExpiresAt", token.ExpiresAt.ToString());
-            base.dbContext.AddParameters("@TokenID", token.ID);
+            base.dbContext.AddParameters("@BrowserConnectID", token.BrowserConnectID);
+            base.dbContext.AddParameters("@TokenStr", token.TokenStr);
             return base.dbContext.Update(sql) > 0;
         }
         public bool Delete(Token token)
         {
-            string sql = $@"DELETE FROM Token WHERE TokenID = @TokenID";
-            base.dbContext.AddParameters("@TokenID", token.ID);
+            string sql = $@"DELETE FROM Token WHERE TokenStr = @TokenStr";
+            base.dbContext.AddParameters("@TokenStr", token.TokenStr);
             return base.dbContext.Delete(sql) > 0;
         }
         public bool DeleteByID(string ID)
         {
-            string sql = $@"DELETE FROM Token WHERE TokenID = @TokenID";
-            base.dbContext.AddParameters("@TokenID", ID);
+            string sql = $@"DELETE FROM Token WHERE TokenStr = @TokenStr";
+            base.dbContext.AddParameters("@TokenStr", ID);
             return base.dbContext.Delete(sql) > 0;
         }
 
@@ -59,8 +62,8 @@ namespace Web_Service
 
         public Token GetByID(string ID)
         {
-            string sql = $@"SELECT * FROM Token WHERE TokenID = @TokenID";
-            base.dbContext.AddParameters("@TokenID", ID);
+            string sql = $@"SELECT * FROM Token WHERE TokenStr = @TokenStr";
+            base.dbContext.AddParameters("@TokenStr", ID);
             using (IDataReader reader = base.dbContext.Read(sql))
             {
                 reader.Read();

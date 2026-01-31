@@ -9,10 +9,11 @@ namespace Web_Service
         {
             return new Token()
             {
+                TokenStr = Convert.ToString(src["TokenStr"]),
                 ExpiresAt = Convert.ToDateTime(src["ExpiresAt"]),
-                ID = Convert.ToString(src["TokenID"]),
-                UserID = Convert.ToString(src["UserID"]),
-                CreatedAt = Convert.ToDateTime(src["CreatedAt"])
+                CreatedAt = Convert.ToDateTime(src["CreatedAt"]),
+                AuthUserID = Convert.ToString(src["AuthUserID"]),
+                BrowserConnectID = Convert.ToString(src["BrowserConnectID"]),
             };
         }
     }

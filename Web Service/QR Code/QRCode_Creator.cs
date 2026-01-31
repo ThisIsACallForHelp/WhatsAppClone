@@ -13,7 +13,8 @@ namespace Web_Service
     {
         
         public static string GetToken()
-        {            
+        {
+            
             string buffer = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
             StringBuilder Token = new StringBuilder();
             using (RandomNumberGenerator rng = RandomNumberGenerator.Create())
