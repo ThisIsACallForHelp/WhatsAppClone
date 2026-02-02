@@ -10,6 +10,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<IHtmlSanitizer, HtmlSanitizer>();
 builder.Services.AddSignalR();
+builder.Services.AddDataProtection();
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromSeconds(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+builder.Services.Configure<QREncryptor>(
+    builder.Configuration.GetSection("QRAuth")
+);
 var app = builder.Build();
 app.MapHub<ChatHub>("/GetChats");
 // Configure the HTTP request pipeline.
@@ -20,8 +31,6 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-builder.Services.AddDataProtection();
-builder.Services.AddDistributedMemoryCache();
 
 
 app.UseCsp(csp =>
@@ -51,11 +60,11 @@ app.UseCsp(csp =>
     csp.BlockAllMixedContent();
 });
 
+app.UseSession();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
 app.UseAuthorization();
 
 app.MapControllerRoute(

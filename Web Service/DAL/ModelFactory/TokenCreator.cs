@@ -12,7 +12,7 @@ namespace Web_Service
                 TokenStr = Convert.ToString(src["TokenStr"]),
                 ExpiresAt = Convert.ToDateTime(src["ExpiresAt"]),
                 CreatedAt = Convert.ToDateTime(src["CreatedAt"]),
-                AuthUserID = Convert.ToString(src["AuthUserID"]),
+                AuthUserID = Convert.ToString(src["UserID"]),
                 BrowserConnectID = Convert.ToString(src["BrowserConnectID"]),
             };
         }

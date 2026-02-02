@@ -9,13 +9,22 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using Web_Service;
 using static System.Net.Mime.MediaTypeNames;
+
 namespace FrutigerWebApp
 {
     public static class ComplexHelper<T>
     {
+        
         public static string ChatID { get; set; }
+        public static string? SessionID { get; set; }
+        
 
         //finish ts
+
+        public static void SignQR_Data(string Token)
+        {
+
+        }
         public static Message SendMSG(string SenderID, string Text, string PublicKey, string SigningKey, out byte[] IV ,
                                       out byte[] HMAC, out byte[] CipherTxt, out byte[] BPublic)
         {

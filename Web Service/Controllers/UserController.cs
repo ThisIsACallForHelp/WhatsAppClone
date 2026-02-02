@@ -241,7 +241,7 @@ namespace Web_Service
         }
 
         [HttpGet]
-        public IActionResult GetQR()
+        public IActionResult GetQR(string SessID)
         {
             //works
             try
@@ -255,7 +255,7 @@ namespace Web_Service
                     AuthUserID = "gjifodsa",
                     HasBeenUsed = false,
                     RedirectURL = "https://diffractive-garret-supereducated.ngrok-free.dev/User/VerifyQR?Token=",
-                    BrowserConnectID = "BrowserID"
+                    BrowserConnectID = SessID
                 };
                 token.RedirectURL += token.TokenStr;
                 if (!this.UOW.TokenRepository.Create(token))
