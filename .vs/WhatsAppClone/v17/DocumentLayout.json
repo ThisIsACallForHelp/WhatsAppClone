@@ -7,20 +7,24 @@
       "RelativeMoniker": "D:0:0:{AB440DE1-29ED-425B-9F7D-C6F9D6B5F28C}|FrutigerWebApp\\FrutigerWebApp.csproj|solutionrelative:frutigerwebapp\\userdata\\qrencryptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB440DE1-29ED-425B-9F7D-C6F9D6B5F28C}|FrutigerWebApp\\FrutigerWebApp.csproj|c:\\trivia_game\\whatsappclone\\frutigerwebapp\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB440DE1-29ED-425B-9F7D-C6F9D6B5F28C}|FrutigerWebApp\\FrutigerWebApp.csproj|solutionrelative:frutigerwebapp\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{42F64202-3388-4A74-923E-F899BD1C123A}|Web Service\\Web Service.csproj|c:\\trivia_game\\whatsappclone\\web service\\encryption\\diffie-hellman\\keystorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42F64202-3388-4A74-923E-F899BD1C123A}|Web Service\\Web Service.csproj|solutionrelative:web service\\encryption\\diffie-hellman\\keystorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{42F64202-3388-4A74-923E-F899BD1C123A}|Web Service\\Web Service.csproj|c:\\trivia_game\\whatsappclone\\web service\\encryption\\diffie-hellman\\dhencryption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{42F64202-3388-4A74-923E-F899BD1C123A}|Web Service\\Web Service.csproj|solutionrelative:web service\\encryption\\diffie-hellman\\dhencryption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{AB440DE1-29ED-425B-9F7D-C6F9D6B5F28C}|FrutigerWebApp\\FrutigerWebApp.csproj|c:\\trivia_game\\whatsappclone\\frutigerwebapp\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB440DE1-29ED-425B-9F7D-C6F9D6B5F28C}|FrutigerWebApp\\FrutigerWebApp.csproj|solutionrelative:frutigerwebapp\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42F64202-3388-4A74-923E-F899BD1C123A}|Web Service\\Web Service.csproj|c:\\trivia_game\\whatsappclone\\web service\\qr code\\qrcode_creator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42F64202-3388-4A74-923E-F899BD1C123A}|Web Service\\Web Service.csproj|solutionrelative:web service\\qr code\\qrcode_creator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AB440DE1-29ED-425B-9F7D-C6F9D6B5F28C}|FrutigerWebApp\\FrutigerWebApp.csproj|c:\\trivia_game\\whatsappclone\\frutigerwebapp\\userdata\\complexhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB440DE1-29ED-425B-9F7D-C6F9D6B5F28C}|FrutigerWebApp\\FrutigerWebApp.csproj|solutionrelative:frutigerwebapp\\userdata\\complexhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42F64202-3388-4A74-923E-F899BD1C123A}|Web Service\\Web Service.csproj|c:\\trivia_game\\whatsappclone\\web service\\encryption\\diffie-hellman\\keystorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42F64202-3388-4A74-923E-F899BD1C123A}|Web Service\\Web Service.csproj|solutionrelative:web service\\encryption\\diffie-hellman\\keystorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB440DE1-29ED-425B-9F7D-C6F9D6B5F28C}|FrutigerWebApp\\FrutigerWebApp.csproj|c:\\trivia_game\\whatsappclone\\frutigerwebapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -37,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{42F64202-3388-4A74-923E-F899BD1C123A}|Web Service\\Web Service.csproj|c:\\trivia_game\\whatsappclone\\web service\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{42F64202-3388-4A74-923E-F899BD1C123A}|Web Service\\Web Service.csproj|solutionrelative:web service\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{42F64202-3388-4A74-923E-F899BD1C123A}|Web Service\\Web Service.csproj|c:\\trivia_game\\whatsappclone\\web service\\qr code\\qrcode_creator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42F64202-3388-4A74-923E-F899BD1C123A}|Web Service\\Web Service.csproj|solutionrelative:web service\\qr code\\qrcode_creator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{32BDC8BC-6F37-47E0-AD62-F4302355D5D3}|API\\API.csproj|c:\\trivia_game\\whatsappclone\\api\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -367,7 +367,7 @@
               "RelativeDocumentMoniker": "FrutigerWebApp\\UserData\\QREncryptor.cs",
               "ToolTip": "C:\\Trivia_Game\\WhatsAppClone\\FrutigerWebApp\\UserData\\QREncryptor.cs",
               "RelativeToolTip": "FrutigerWebApp\\UserData\\QREncryptor.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAmwCAAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAwCQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-02T10:36:48.18Z",
               "EditorCaption": ""
@@ -380,40 +380,13 @@
               "RelativeDocumentMoniker": "FrutigerWebApp\\UserData\\ComplexHelper.cs",
               "ToolTip": "C:\\Trivia_Game\\WhatsAppClone\\FrutigerWebApp\\UserData\\ComplexHelper.cs",
               "RelativeToolTip": "FrutigerWebApp\\UserData\\ComplexHelper.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAA5wBMAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAwwBMAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-20T18:59:06.748Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DHEncryption.cs",
-              "DocumentMoniker": "C:\\Trivia_Game\\WhatsAppClone\\Web Service\\Encryption\\Diffie-Hellman\\DHEncryption.cs",
-              "RelativeDocumentMoniker": "Web Service\\Encryption\\Diffie-Hellman\\DHEncryption.cs",
-              "ToolTip": "C:\\Trivia_Game\\WhatsAppClone\\Web Service\\Encryption\\Diffie-Hellman\\DHEncryption.cs",
-              "RelativeToolTip": "Web Service\\Encryption\\Diffie-Hellman\\DHEncryption.cs",
-              "ViewState": "AgIAAF8AAAAAAAAAAADwv28AAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T10:04:42.234Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-20T18:59:06.748Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "ChatHub.cs",
-              "DocumentMoniker": "C:\\Trivia_Game\\WhatsAppClone\\FrutigerWebApp\\ChatHub.cs",
-              "RelativeDocumentMoniker": "FrutigerWebApp\\ChatHub.cs",
-              "ToolTip": "C:\\Trivia_Game\\WhatsAppClone\\FrutigerWebApp\\ChatHub.cs",
-              "RelativeToolTip": "FrutigerWebApp\\ChatHub.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T20:32:04.821Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Trivia_Game\\WhatsAppClone\\FrutigerWebApp\\appsettings.json",
               "RelativeDocumentMoniker": "FrutigerWebApp\\appsettings.json",
@@ -421,12 +394,11 @@
               "RelativeToolTip": "FrutigerWebApp\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-29T19:46:49.086Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-29T19:46:49.086Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Trivia_Game\\WhatsAppClone\\FrutigerWebApp\\Program.cs",
               "RelativeDocumentMoniker": "FrutigerWebApp\\Program.cs",
@@ -434,12 +406,11 @@
               "RelativeToolTip": "FrutigerWebApp\\Program.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T15:41:19.258Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-04T15:41:19.258Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Trivia_Game\\WhatsAppClone\\FrutigerWebApp\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "FrutigerWebApp\\Controllers\\UserController.cs",
@@ -447,12 +418,11 @@
               "RelativeToolTip": "FrutigerWebApp\\Controllers\\UserController.cs",
               "ViewState": "AgIAAFAAAAAAAAAAAAAvwFwAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T10:49:00.752Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-01T10:49:00.752Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "KeyStorage.cs",
               "DocumentMoniker": "C:\\Trivia_Game\\WhatsAppClone\\Web Service\\Encryption\\Diffie-Hellman\\KeyStorage.cs",
               "RelativeDocumentMoniker": "Web Service\\Encryption\\Diffie-Hellman\\KeyStorage.cs",
@@ -460,12 +430,47 @@
               "RelativeToolTip": "Web Service\\Encryption\\Diffie-Hellman\\KeyStorage.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T10:26:18.966Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-01T10:26:18.966Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "QRCode_Creator.cs",
+              "DocumentMoniker": "C:\\Trivia_Game\\WhatsAppClone\\Web Service\\QR Code\\QRCode_Creator.cs",
+              "RelativeDocumentMoniker": "Web Service\\QR Code\\QRCode_Creator.cs",
+              "ToolTip": "C:\\Trivia_Game\\WhatsAppClone\\Web Service\\QR Code\\QRCode_Creator.cs",
+              "RelativeToolTip": "Web Service\\QR Code\\QRCode_Creator.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAEwBIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T16:04:59.711Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DHEncryption.cs",
+              "DocumentMoniker": "C:\\Trivia_Game\\WhatsAppClone\\Web Service\\Encryption\\Diffie-Hellman\\DHEncryption.cs",
+              "RelativeDocumentMoniker": "Web Service\\Encryption\\Diffie-Hellman\\DHEncryption.cs",
+              "ToolTip": "C:\\Trivia_Game\\WhatsAppClone\\Web Service\\Encryption\\Diffie-Hellman\\DHEncryption.cs",
+              "RelativeToolTip": "Web Service\\Encryption\\Diffie-Hellman\\DHEncryption.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAswF0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T10:04:42.234Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "ChatHub.cs",
+              "DocumentMoniker": "C:\\Trivia_Game\\WhatsAppClone\\FrutigerWebApp\\ChatHub.cs",
+              "RelativeDocumentMoniker": "FrutigerWebApp\\ChatHub.cs",
+              "ToolTip": "C:\\Trivia_Game\\WhatsAppClone\\FrutigerWebApp\\ChatHub.cs",
+              "RelativeToolTip": "FrutigerWebApp\\ChatHub.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-30T20:32:04.821Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Trivia_Game\\WhatsAppClone\\Web Service\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Web Service\\Controllers\\UserController.cs",
@@ -473,21 +478,7 @@
               "RelativeToolTip": "Web Service\\Controllers\\UserController.cs",
               "ViewState": "AgIAADYBAAAAAAAAAAAkwEgBAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T17:58:11.164Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "QRCode_Creator.cs",
-              "DocumentMoniker": "C:\\Trivia_Game\\WhatsAppClone\\Web Service\\QR Code\\QRCode_Creator.cs",
-              "RelativeDocumentMoniker": "Web Service\\QR Code\\QRCode_Creator.cs",
-              "ToolTip": "C:\\Trivia_Game\\WhatsAppClone\\Web Service\\QR Code\\QRCode_Creator.cs",
-              "RelativeToolTip": "Web Service\\QR Code\\QRCode_Creator.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAewBIAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-29T16:04:59.711Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T17:58:11.164Z"
             },
             {
               "$type": "Document",
@@ -499,8 +490,7 @@
               "RelativeToolTip": "API\\Client.cs",
               "ViewState": "AgIAACUAAAAAAAAAAAAnwDEAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-24T09:38:13.479Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-24T09:38:13.479Z"
             },
             {
               "$type": "Document",

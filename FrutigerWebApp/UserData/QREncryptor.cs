@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using Microsoft.AspNetCore.DataProtection;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace FrutigerWebApp
@@ -21,15 +22,23 @@ namespace FrutigerWebApp
                 return hmacsha.ComputeHash(data);
             }
         }
-        public static string Sign(string secretBase64, string data)
+        public static string Sign(string secret, string data)
         {
-            byte[] key = Convert.FromBase64String(secretBase64);
+            byte[] key = Convert.FromBase64String(secret);
             byte[] bytes = Encoding.UTF8.GetBytes(data);
+            using (var hmac = new HMACSHA256(key))
+            {
+                byte[] hash = hmac.ComputeHash(bytes);
+                return Convert.ToBase64String(hash);
+            }
+        }
 
-            using var hmac = new HMACSHA256(key);
-            byte[] hash = hmac.ComputeHash(bytes);
-
-            return Convert.ToBase64String(hash);
+        public static bool Verify(string key, string data, byte[] hmac)
+        {
+            byte[] ByteKey = Convert.FromBase64String(key);
+            byte[] bytes = Encoding.UTF8.GetBytes(data);
+            byte[] computedHmac = ComputeHMAC(bytes, ByteKey);
+            return computedHmac.SequenceEqual(hmac);
         }
     }
 }
