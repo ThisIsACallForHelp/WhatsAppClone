@@ -265,3 +265,11 @@ C:\Trivia_Game\WhatsAppClone\FrutigerWebApp\bin\Debug\net8.0\System.IO.Pipelines
 C:\Trivia_Game\WhatsAppClone\FrutigerWebApp\bin\Debug\net8.0\System.Text.Encodings.Web.dll
 C:\Trivia_Game\WhatsAppClone\FrutigerWebApp\bin\Debug\net8.0\System.Text.Json.dll
 C:\Trivia_Game\WhatsAppClone\FrutigerWebApp\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Trivia_Game\WhatsAppClone\FrutigerWebApp\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
+C:\Trivia_Game\WhatsAppClone\FrutigerWebApp\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Trivia_Game\WhatsAppClone\FrutigerWebApp\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Trivia_Game\WhatsAppClone\FrutigerWebApp\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Trivia_Game\WhatsAppClone\FrutigerWebApp\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Trivia_Game\WhatsAppClone\FrutigerWebApp\bin\Debug\net8.0\Postmark.dll
+C:\Trivia_Game\WhatsAppClone\FrutigerWebApp\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Trivia_Game\WhatsAppClone\FrutigerWebApp\bin\Debug\net8.0\Twilio.dll

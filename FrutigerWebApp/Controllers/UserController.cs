@@ -13,6 +13,7 @@ using System.IO;
 using System.Net;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
+using Twilio.Rest.Events.V1.Sink;
 using Web_Service;
 using static System.Net.Mime.MediaTypeNames;
 namespace FrutigerWebApp
@@ -35,6 +36,8 @@ namespace FrutigerWebApp
         [HttpGet]
         public async Task<IActionResult> VerifyQR(string Token)
         {
+            ComplexHelper<string>.UserIP = HttpContext.Connection.RemoteIpAddress?.ToString();
+            ComplexHelper<string>.UserAgent = Request.Headers["User-Agent"];
             Client<Data.Token> Client = new Client<Data.Token>()
             {
                 Path = "api/User/GetToken",
@@ -83,6 +86,8 @@ namespace FrutigerWebApp
             {
                 return BadRequest();
             }
+            await ComplexHelper<string>.SendConfirmation();
+
             return RedirectToAction("GetChats", "User", new { ChatID = "", UserID = user.ID, IsGroup = false });
         }
 
@@ -250,6 +255,29 @@ namespace FrutigerWebApp
             }
             ViewBag.Error = true;
             return RedirectToAction();
+        }
+
+        [HttpGet]
+
+        public async Task<bool> VerifyMail(string Prev)
+        {
+            string CurrIP = HttpContext.Connection.RemoteIpAddress?.ToString();
+            string UserAgent = Request.Headers["User-Agent"];
+
+            if(CurrIP != ComplexHelper<string>.UserIP)
+            {
+                DropConnection();
+            }
+            if(UserAgent != ComplexHelper<string>.UserAgent)
+            {
+                DropConnection();
+            }
+        }
+
+        [HttpGet]
+        public void DropConnection()
+        {
+
         }
     }
 }

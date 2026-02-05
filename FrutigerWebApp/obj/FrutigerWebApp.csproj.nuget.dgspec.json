@@ -10,14 +10,14 @@
         "projectUniqueName": "C:\\Trivia_Game\\WhatsAppClone\\API\\API.csproj",
         "projectName": "API",
         "projectPath": "C:\\Trivia_Game\\WhatsAppClone\\API\\API.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\natan\\.nuget\\packages\\",
         "outputPath": "C:\\Trivia_Game\\WhatsAppClone\\API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\natan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -76,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -86,14 +86,14 @@
         "projectUniqueName": "C:\\Trivia_Game\\WhatsAppClone\\Data\\Data.csproj",
         "projectName": "Data",
         "projectPath": "C:\\Trivia_Game\\WhatsAppClone\\Data\\Data.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\natan\\.nuget\\packages\\",
         "outputPath": "C:\\Trivia_Game\\WhatsAppClone\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\natan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -152,7 +152,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -162,14 +162,14 @@
         "projectUniqueName": "C:\\Trivia_Game\\WhatsAppClone\\FrutigerWebApp\\FrutigerWebApp.csproj",
         "projectName": "FrutigerWebApp",
         "projectPath": "C:\\Trivia_Game\\WhatsAppClone\\FrutigerWebApp\\FrutigerWebApp.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\natan\\.nuget\\packages\\",
         "outputPath": "C:\\Trivia_Game\\WhatsAppClone\\FrutigerWebApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\natan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -215,7 +215,7 @@
           "dependencies": {
             "HtmlSanitizer": {
               "target": "Package",
-              "version": "[9.0.886, )"
+              "version": "[9.0.892, )"
             },
             "Microsoft.AspNetCore.SignalR.Common": {
               "target": "Package",
@@ -229,6 +229,10 @@
               "target": "Package",
               "version": "[3.0.0, )"
             },
+            "Postmark": {
+              "target": "Package",
+              "version": "[5.3.0, )"
+            },
             "QRCoder": {
               "target": "Package",
               "version": "[1.7.0, )"
@@ -236,6 +240,10 @@
             "System.IO": {
               "target": "Package",
               "version": "[4.3.0, )"
+            },
+            "Twilio": {
+              "target": "Package",
+              "version": "[7.14.2, )"
             }
           },
           "imports": [
@@ -257,7 +265,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -267,14 +275,14 @@
         "projectUniqueName": "C:\\Trivia_Game\\WhatsAppClone\\Web Service\\Web Service.csproj",
         "projectName": "Web Service",
         "projectPath": "C:\\Trivia_Game\\WhatsAppClone\\Web Service\\Web Service.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\natan\\.nuget\\packages\\",
         "outputPath": "C:\\Trivia_Game\\WhatsAppClone\\Web Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\natan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -356,7 +364,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

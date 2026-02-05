@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using Web_Service;
+using PostmarkDotNet;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace FrutigerWebApp
@@ -17,10 +18,33 @@ namespace FrutigerWebApp
         
         public static string ChatID { get; set; }
         public static string? SessionID { get; set; }
-        
+
+        public static string? UserIP { get; set; } = string.Empty;
+        public static string UserAgent {  get; set; } = string.Empty;
 
         //finish ts
 
+        public static async Task SendConfirmation(string DestMail = "s033190@lilienthal.ort.org.il")
+        {
+            string Api = Environment.GetEnvironmentVariable("POSTMARK_SERVER_TOKEN");
+            var Client = new PostmarkClient(Api);
+            var Message = new PostmarkMessage()
+            {
+                From = "s033190@lilienthal.ort.org.il",
+                To = DestMail,
+                Subject = "AquaLink Account Security",
+                TextBody = "A Login Attempt Has Been Spotted",
+                HtmlBody = @"<strong> Please, Verify This Was You </strong> 
+                             <br/> 
+                             <button onclick='https://localhost:7159/User/VerifyMail'> Confirm </button> 
+                             <button onclick='https://localhost:7159/User/DropConnection'> Deny </button>"
+            };
+            var result = await Client.SendMessageAsync(Message);
+            if (result.Status != PostmarkStatus.Success)
+            {
+                Console.WriteLine("Couldnt Send The Email");
+            }
+        }
         public static void SignQR_Data(string Token)
         {
 

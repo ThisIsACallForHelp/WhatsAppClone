@@ -12,6 +12,7 @@ namespace Web_Service
         {
             string sql = $@"INSERT INTO Token(TokenStr, UserID, CreatedAt, ExpiresAt, BrowserConnectID)
                                         VALUES(@TokenStr,@AuthUserID, @CreatedAt, @ExpiresAt, @BrowserConnectID)";
+            
             base.dbContext.AddParameters("@TokenStr", token.TokenStr);
             base.dbContext.AddParameters("@UserID", token.AuthUserID);
             base.dbContext.AddParameters("@CreatedAt", token.CreatedAt.ToString());

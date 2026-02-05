@@ -251,7 +251,7 @@ namespace Web_Service
                 {
                     TokenStr = QRCode_Creator.GetToken(),
                     CreatedAt = DateTime.Now,
-                    ExpiresAt = DateTime.UtcNow.AddMinutes(1),
+                    ExpiresAt = DateTime.UtcNow.AddSeconds(30),
                     AuthUserID = "gjifodsa",
                     HasBeenUsed = false,
                     RedirectURL = "https://diffractive-garret-supereducated.ngrok-free.dev/User/VerifyQR?Token=",

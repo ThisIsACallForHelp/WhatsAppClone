@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Builder.Extensions;
 using Microsoft.AspNetCore.SignalR;
 using NWebsec.AspNetCore.Middleware.Middleware;
+using Microsoft.AspNetCore.HttpOverrides;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -21,7 +22,16 @@ builder.Services.AddSession(options =>
 builder.Services.Configure<QREncryptor>(
     builder.Configuration.GetSection("QRAuth")
 );
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders =
+        ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+
+    options.KnownNetworks.Clear();
+    options.KnownProxies.Clear();
+});
 var app = builder.Build();
+app.UseForwardedHeaders();
 app.MapHub<ChatHub>("/GetChats");
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

@@ -38,7 +38,7 @@ namespace FrutigerWebApp
             byte[] ByteKey = Convert.FromBase64String(key);
             byte[] bytes = Encoding.UTF8.GetBytes(data);
             byte[] computedHmac = ComputeHMAC(bytes, ByteKey);
-            return computedHmac.SequenceEqual(hmac);
+            return CryptographicOperations.FixedTimeEquals(computedHmac, hmac);
         }
     }
 }
